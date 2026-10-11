@@ -1,0 +1,142 @@
+/* PERDASAMA Corporate Platform Styles */
+@layer base {
+  html, body {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f131d;
+}
+::-webkit-scrollbar-thumb {
+  background: #262a35;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffb95f;
+}
+
+body {
+  min-height: max(884px, 100dvh);
+  background-color: #0a0e18;
+}
+
+.gold-metallic-card {
+  background: linear-gradient(135deg, #1e2538 0%, #151a28 45%, #101522 100%);
+  box-shadow: 0 16px 40px -4px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 185, 95, 0.28);
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-metallic-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 20%,
+    rgba(255, 221, 184, 0.08) 35%,
+    rgba(255, 185, 95, 0.18) 50%,
+    rgba(255, 221, 184, 0.08) 65%,
+    transparent 80%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  animation: shineSweep 8s ease-in-out infinite;
+}
+
+@keyframes shineSweep {
+  0% { transform: translateY(-100%) rotate(25deg); }
+  25% { transform: translateY(100%) rotate(25deg); }
+  100% { transform: translateY(100%) rotate(25deg); }
+}
+
+.gold-sheen {
+  background: linear-gradient(90deg, transparent, rgba(255, 221, 184, 0.12), transparent);
+}
+
+/* Pulsing radar effect for NFC */
+.nfc-pulse {
+  position: relative;
+}
+.nfc-pulse::before, .nfc-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid rgba(78, 222, 163, 0.4);
+  animation: nfcRadar 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.nfc-pulse::after {
+  animation-delay: 1s;
+}
+
+@keyframes nfcRadar {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* Smooth modal animations */
+.modal-enter {
+  animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Toast animation */
+.toast-slide {
+  animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes toastIn {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* Tab Views Transition */
+.tab-pane {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.tab-pane.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* Mobile Wrapper Container for Desktop Presentation */
+.app-container {
+  width: 100%;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+  position: relative;
+  background-color: #0f131d;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+}

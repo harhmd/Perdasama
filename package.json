@@ -1,0 +1,23 @@
+{
+  "name": "perdasama-platform",
+  "version": "1.0.0",
+  "description": "Platform Digital Keahlian Korporat PERDASAMA - Dewan Usahawan Melayu Malaysia",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "perdasama",
+    "korporat",
+    "digital-card",
+    "nfc",
+    "malaysia"
+  ],
+  "author": "PERDASAMA",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}
