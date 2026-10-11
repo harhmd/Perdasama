@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html class="dark" lang="ms">
+<html lang="ms">
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
   <meta content="mobile_tab" name="shell-type"/>
-  <title>PERDASAMA - Profil Ahli Korporat & Kad Digital</title>
+  <title>PERDASAMA - Kad Digital Korporat Maya & Profil Ahli</title>
+  
+  <!-- Google Fonts: Inter, Plus Jakarta Sans, Share Tech Mono -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  
+  <!-- Custom Luxury Stylesheet -->
   <link rel="stylesheet" href="/css/style.css"/>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script id="tailwind-config">
     tailwind.config = {
@@ -15,137 +21,81 @@
       theme: {
         extend: {
           colors: {
-            "on-tertiary-container": "#ffeedd",
-            "error": "#ffb4ab",
-            "on-secondary-container": "#00311f",
-            "secondary": "#4edea3",
-            "background": "#0f131d",
-            "tertiary-fixed-dim": "#ffb95f",
-            "on-tertiary-fixed": "#2a1700",
-            "on-surface-variant": "#c3c6d7",
-            "on-tertiary-fixed-variant": "#653e00",
-            "surface-container-high": "#262a35",
-            "primary-container": "#2563eb",
-            "on-error": "#690005",
-            "on-primary": "#002a78",
-            "on-surface": "#dfe2f1",
-            "inverse-on-surface": "#2c303b",
-            "primary": "#b4c5ff",
-            "outline-variant": "#434655",
-            "primary-fixed-dim": "#b4c5ff",
-            "on-secondary": "#003824",
-            "surface-container-highest": "#313540",
-            "surface": "#0f131d",
-            "secondary-fixed": "#6ffbbe",
-            "on-background": "#dfe2f1",
-            "surface-bright": "#353944",
-            "error-container": "#93000a",
-            "tertiary-fixed": "#ffddb8",
-            "surface-dim": "#0f131d",
-            "tertiary-container": "#996100",
-            "outline": "#8d90a0",
-            "secondary-fixed-dim": "#4edea3",
-            "surface-container": "#1c1f2a",
-            "surface-tint": "#b4c5ff",
-            "tertiary": "#ffb95f",
-            "surface-variant": "#313540",
-            "surface-container-low": "#171b26",
-            "inverse-primary": "#0053db",
-            "on-secondary-fixed": "#002113",
-            "inverse-surface": "#dfe2f1",
-            "on-primary-fixed-variant": "#003ea8",
-            "on-primary-container": "#eeefff",
-            "on-error-container": "#ffdad6",
-            "secondary-container": "#00a572",
-            "on-secondary-fixed-variant": "#005236",
-            "primary-fixed": "#dbe1ff",
-            "on-tertiary": "#472a00",
-            "surface-container-lowest": "#0a0e18",
-            "on-primary-fixed": "#00174b"
-          },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "2xl": "1rem",
-            "3xl": "1.25rem",
-            "full": "9999px"
-          },
-          spacing: {
-            "gutter": "0.75rem",
-            "gutter-tablet": "1rem",
-            "space-sm": "0.5rem",
-            "margin-tablet": "1.5rem",
-            "space-xl": "1.5rem",
-            "margin": "1rem",
-            "space-md": "0.75rem",
-            "space-xs": "0.25rem",
-            "space-lg": "1rem"
+            "corp-navy": "#071c3d",
+            "corp-blue": "#1e3a8a",
+            "corp-blue-light": "#2563eb",
+            "corp-gold": "#d97706",
+            "corp-gold-light": "#fef3c7",
+            "corp-gold-metallic": "#f59e0b",
+            "primary": "#1e40af",
+            "primary-container": "#1e3a8a",
+            "surface": "#ffffff",
+            "background": "#f8fafc",
+            "surface-container": "#f8fafc",
+            "surface-container-high": "#f1f5f9",
+            "surface-container-highest": "#e2e8f0",
+            "surface-container-low": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#0f172a",
+            "on-surface-variant": "#475569",
+            "outline": "#94a3b8",
+            "outline-variant": "#e2e8f0",
+            "secondary": "#059669",
+            "secondary-container": "#065f46",
+            "tertiary": "#d97706"
           },
           fontFamily: {
-            "body-md": ["Inter"],
-            "headline-xl": ["Plus Jakarta Sans"],
-            "label-md": ["Inter"],
-            "metric-display": ["Plus Jakarta Sans"],
-            "headline-md": ["Plus Jakarta Sans"],
-            "headline-sm": ["Plus Jakarta Sans"],
-            "body-lg": ["Inter"],
-            "label-lg": ["Inter"],
-            "label-sm": ["Inter"],
-            "headline-lg": ["Plus Jakarta Sans"],
-            "body-sm": ["Inter"]
-          },
-          fontSize: {
-            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
-            "headline-xl": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
-            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
-            "metric-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
-            "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
-            "headline-sm": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
-            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
-            "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }],
-            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }],
-            "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
-            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }]
+            "body-md": ["Inter", "sans-serif"],
+            "headline-xl": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "card-mono": ["Share Tech Mono", "monospace"]
           }
         }
       }
     };
   </script>
 </head>
-<body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen">
+<body class="bg-slate-100 font-body-md text-slate-800 antialiased flex flex-col min-h-screen">
   
-  <div class="app-container flex flex-col min-h-screen relative">
+  <div class="app-container flex flex-col min-h-screen relative shadow-2xl">
     
-    <!-- HEADER -->
-    <header class="fixed top-0 max-w-[540px] w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-outline-variant/30">
-      <div class="h-16 px-margin flex items-center justify-between gap-space-sm">
-        <div class="flex items-center gap-space-sm min-w-0 flex-1">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary-container via-surface-container-highest to-tertiary-container flex items-center justify-center p-0.5 border border-tertiary/40 flex-shrink-0 shadow-md">
-            <span class="material-symbols-outlined text-tertiary font-bold" style="font-size: 22px;">shield</span>
+    <!-- ============================================== -->
+    <!-- HEADER: WHITE CORPORATE WITH GOLD EMBLEM      -->
+    <!-- ============================================== -->
+    <header class="fixed top-0 max-w-[540px] w-full z-50 pt-safe bg-white/95 backdrop-blur-xl border-b border-slate-200/90 shadow-sm">
+      <div class="h-16 px-4 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3 min-w-0 flex-1">
+          <!-- Corporate Shield Emblem -->
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-corp-navy via-corp-blue to-blue-700 flex items-center justify-center p-0.5 border-2 border-amber-400/80 flex-shrink-0 shadow-md">
+            <span class="material-symbols-outlined text-amber-300 font-bold" style="font-size: 22px;">shield</span>
           </div>
           <div class="flex flex-col min-w-0">
             <div class="flex items-center gap-1.5">
-              <span class="text-label-sm font-label-sm font-extrabold text-tertiary tracking-wider uppercase">PERDASAMA</span>
-              <span class="inline-flex items-center px-1.5 py-0.2 rounded-full text-[9px] font-bold bg-secondary/15 text-secondary border border-secondary/30">RASMI</span>
+              <span class="text-[11px] font-extrabold text-corp-blue tracking-wider uppercase">PERDASAMA</span>
+              <span class="inline-flex items-center px-1.5 py-0.2 rounded-full text-[9px] font-extrabold bg-amber-500/15 text-amber-800 border border-amber-400/40">RASMI</span>
             </div>
-            <h1 class="text-label-lg font-headline-sm font-semibold text-on-surface truncate">Profil Ahli Korporat</h1>
+            <h1 class="text-xs font-bold text-slate-900 truncate tracking-tight">Profil Ahli Korporat</h1>
           </div>
         </div>
-        <div class="flex items-center gap-1.5 flex-shrink-0">
-          <button id="btn-notifications" aria-label="Notifikasi" onclick="showToast('Tiada mesej baharu. Semua sistem status hijau.')" class="relative w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container-high/60 text-on-surface-variant hover:text-on-surface active:scale-95 transition-all border border-outline-variant/30">
+
+        <!-- Header Actions -->
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <button id="btn-notifications" aria-label="Notifikasi" onclick="showToast('Tiada mesej baharu. Semua sistem status hijau.')" class="relative w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-600 hover:text-corp-blue active:scale-95 transition-all border border-slate-200 shadow-sm">
             <span class="material-symbols-outlined" style="font-size: 20px;">notifications</span>
-            <span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface"></span>
+            <span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-emerald-500 ring-2 ring-white"></span>
           </button>
-          <div class="relative w-10 h-10 rounded-xl overflow-hidden ring-1 ring-tertiary/50 shadow-sm flex-shrink-0 cursor-pointer" onclick="openModal('modal-share-card')">
+          <div class="relative w-10 h-10 rounded-xl overflow-hidden ring-2 ring-amber-400/80 shadow-md flex-shrink-0 cursor-pointer" onclick="openMemberQRModal()">
             <img alt="Avatar Dato' Dr. Megat Azlan" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZAwA1TGYoxecYF0pirKumKQCCY0HdzsexvgbIKmu9_g2SVltr0XY2ZGJYD4a9v2yrYjS3ju8v0mUquwb_5JLVG5FNgw65CEZ38MgcgOXA0undoOOFumypFplwb-ACduFZjLOP78q6FPMA_Z8_PlRLGaZ0dVbt8QPej42XIuHW4GFxyfwLkwtpVmekgX7RR6OdWsItCFJJIQJw-bZiQ901K_sLemzHE5sLLIuQdExCGlOitrg024gd"/>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- MAIN BODY -->
-    <main class="flex-1 flex flex-col relative w-full pt-20 pb-36 bg-surface px-margin">
+    <!-- ============================================== -->
+    <!-- MAIN CONTENT                                   -->
+    <!-- ============================================== -->
+    <main class="flex-1 flex flex-col relative w-full pt-20 pb-36 px-4 bg-slate-50">
 
       <!-- ============================================== -->
       <!-- TAB 1: RINGKASAN (EXECUTIVE OVERVIEW)          -->
@@ -153,103 +103,105 @@
       <section id="tab-overview" class="tab-pane flex-col w-full gap-5">
         <div class="flex flex-col gap-1">
           <div class="flex items-center justify-between">
-            <span class="text-label-sm font-label-sm font-bold text-tertiary uppercase tracking-wider">Papan Pemuka Eksekutif</span>
-            <span class="inline-flex items-center gap-1 text-[11px] text-secondary font-bold bg-secondary/15 px-2 py-0.5 rounded-full border border-secondary/30">
-              <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span> Q1 2025 Aktif
+            <span class="text-xs font-bold text-amber-700 uppercase tracking-wider flex items-center gap-1">
+              <span class="material-symbols-outlined text-xs">analytics</span> Papan Pemuka Eksekutif
+            </span>
+            <span class="inline-flex items-center gap-1 text-[11px] text-emerald-800 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Q1 2025 Aktif
             </span>
           </div>
-          <h2 class="text-headline-md font-headline-md font-bold text-on-surface">Prestasi & Impak Usahawan</h2>
-          <p class="text-body-sm text-on-surface-variant">Ringkasan portfolio pertumbuhan Apex BioVentures di bawah ekosistem PERDASAMA.</p>
+          <h2 class="text-xl font-bold text-slate-900 tracking-tight">Prestasi & Impak Usahawan</h2>
+          <p class="text-xs text-slate-500">Ringkasan portfolio pertumbuhan Apex BioVentures di bawah ekosistem PERDASAMA.</p>
         </div>
 
         <!-- Metric highlights -->
         <div class="grid grid-cols-2 gap-3">
-          <div class="bg-surface-container rounded-2xl p-4 border border-outline-variant/30 flex flex-col justify-between">
+          <div class="luxury-white-card rounded-2xl p-4 flex flex-col justify-between">
             <div class="flex items-center justify-between">
-              <span class="text-on-surface-variant text-[11px] font-bold uppercase">Valuasi Entiti</span>
-              <span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span>
+              <span class="text-slate-500 text-[11px] font-bold uppercase tracking-wider">Valuasi Entiti</span>
+              <span class="material-symbols-outlined text-corp-blue text-[20px]">account_balance_wallet</span>
             </div>
-            <div class="mt-2">
-              <span class="text-headline-lg font-bold text-on-surface">RM 320M</span>
-              <span class="text-secondary text-[11px] font-semibold flex items-center gap-1 mt-0.5">
-                <span class="material-symbols-outlined text-[12px]">north_east</span> Nilai Pasaran Ekuiti
+            <div class="mt-3">
+              <span class="text-2xl font-black text-slate-900">RM 320M</span>
+              <span class="text-emerald-700 text-[11px] font-bold flex items-center gap-1 mt-1">
+                <span class="material-symbols-outlined text-[13px]">north_east</span> Nilai Pasaran Ekuiti
               </span>
             </div>
           </div>
-          <div class="bg-surface-container rounded-2xl p-4 border border-outline-variant/30 flex flex-col justify-between">
+          <div class="luxury-white-card rounded-2xl p-4 flex flex-col justify-between">
             <div class="flex items-center justify-between">
-              <span class="text-on-surface-variant text-[11px] font-bold uppercase">Akses Pasaran ASEAN</span>
-              <span class="material-symbols-outlined text-tertiary text-[20px]">language</span>
+              <span class="text-slate-500 text-[11px] font-bold uppercase tracking-wider">Pasaran ASEAN</span>
+              <span class="material-symbols-outlined text-amber-600 text-[20px]">language</span>
             </div>
-            <div class="mt-2">
-              <span class="text-headline-lg font-bold text-on-surface">5 Negara</span>
-              <span class="text-tertiary text-[11px] font-semibold flex items-center gap-1 mt-0.5">
-                <span class="material-symbols-outlined text-[12px]">verified</span> MY, SG, ID, TH, VN
+            <div class="mt-3">
+              <span class="text-2xl font-black text-slate-900">5 Negara</span>
+              <span class="text-amber-700 text-[11px] font-bold flex items-center gap-1 mt-1">
+                <span class="material-symbols-outlined text-[13px]">verified</span> MY, SG, ID, TH, VN
               </span>
             </div>
           </div>
         </div>
 
-        <!-- Business Capabilities Dossier -->
-        <div class="bg-surface-container rounded-2xl p-4 border border-outline-variant/30 flex flex-col gap-3">
-          <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
-            <h3 class="font-headline-sm font-bold text-on-surface flex items-center gap-2">
-              <span class="material-symbols-outlined text-secondary" style="font-size: 20px;">workspace_premium</span>
+        <!-- Accreditation Dossier -->
+        <div class="luxury-white-card rounded-2xl p-4 flex flex-col gap-3">
+          <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+            <h3 class="font-bold text-slate-900 flex items-center gap-2 text-sm">
+              <span class="material-symbols-outlined text-corp-blue" style="font-size: 20px;">workspace_premium</span>
               Status Pematuhan & Akreditasi Korporat
             </h3>
           </div>
           <div class="flex flex-col gap-2.5">
-            <div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-xl border border-outline-variant/20">
-              <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary">
+            <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200/80">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-700">
                   <span class="material-symbols-outlined text-[18px]">verified_user</span>
                 </div>
                 <div>
-                  <span class="block text-label-md font-bold text-on-surface">Pensijilan Halal JAKIM (Pharma)</span>
-                  <span class="block text-[11px] text-on-surface-variant">No. Siri: JAKIM.700-2/3/1-098</span>
+                  <span class="block text-xs font-bold text-slate-900">Pensijilan Halal JAKIM (Pharma)</span>
+                  <span class="block text-[11px] text-slate-500">No. Siri: JAKIM.700-2/3/1-098</span>
                 </div>
               </div>
-              <span class="text-secondary text-[11px] font-bold px-2 py-0.5 rounded bg-secondary/10 border border-secondary/30">Aktif</span>
+              <span class="text-emerald-800 text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-100 border border-emerald-300">Aktif</span>
             </div>
 
-            <div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-xl border border-outline-variant/20">
-              <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center text-primary">
+            <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200/80">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-corp-blue">
                   <span class="material-symbols-outlined text-[18px]">gavel</span>
                 </div>
                 <div>
-                  <span class="block text-label-md font-bold text-on-surface">Kelulusan MDA (Pihak Berkuasa Peranti Perubatan)</span>
-                  <span class="block text-[11px] text-on-surface-variant">Klasifikasi Kelas B & C Diagnostik</span>
+                  <span class="block text-xs font-bold text-slate-900">Kelulusan MDA (Peranti Perubatan)</span>
+                  <span class="block text-[11px] text-slate-500">Klasifikasi Kelas B & C Diagnostik</span>
                 </div>
               </div>
-              <span class="text-primary text-[11px] font-bold px-2 py-0.5 rounded bg-primary/10 border border-primary/30">Penuh</span>
+              <span class="text-corp-blue text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-blue-100 border border-blue-300">Penuh</span>
             </div>
 
-            <div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-xl border border-outline-variant/20">
-              <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-lg bg-tertiary/15 flex items-center justify-center text-tertiary">
+            <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200/80">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center text-amber-700">
                   <span class="material-symbols-outlined text-[18px]">eco</span>
                 </div>
                 <div>
-                  <span class="block text-label-md font-bold text-on-surface">Penarafan Kelestarian ESG</span>
-                  <span class="block text-[11px] text-on-surface-variant">Penanda aras FTSE4Good Bursa Malaysia</span>
+                  <span class="block text-xs font-bold text-slate-900">Penarafan Kelestarian ESG</span>
+                  <span class="block text-[11px] text-slate-500">FTSE4Good Bursa Malaysia Standards</span>
                 </div>
               </div>
-              <span class="text-tertiary text-[11px] font-bold px-2 py-0.5 rounded bg-tertiary/10 border border-tertiary/30">Gred A+</span>
+              <span class="text-amber-800 text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-amber-100 border border-amber-300">Gred A+</span>
             </div>
           </div>
         </div>
 
-        <!-- Corporate announcement -->
-        <div class="bg-gradient-to-br from-surface-container to-surface-container-high rounded-2xl p-4 border border-tertiary/30 flex flex-col gap-2">
+        <!-- Corporate Announcement -->
+        <div class="rounded-2xl p-4 bg-gradient-to-r from-blue-900 via-indigo-900 to-corp-navy text-white shadow-lg border border-amber-400/40 flex flex-col gap-2">
           <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-tertiary text-[20px]">campaign</span>
-            <span class="text-label-sm font-bold text-tertiary uppercase tracking-wider">Perutusan Majlis Tertinggi</span>
+            <span class="material-symbols-outlined text-amber-300 text-[20px]">campaign</span>
+            <span class="text-[11px] font-extrabold text-amber-300 uppercase tracking-widest">Perutusan Majlis Tertinggi</span>
           </div>
-          <p class="text-body-sm text-on-surface font-medium leading-relaxed">
+          <p class="text-xs text-slate-100 font-medium leading-relaxed">
             "PERDASAMA komited memacu penguasaan usahawan Bumiputera dalam teknologi kecerdasan buatan, sains hayat dan rantaian nilai serantau ke tahap bertaraf global."
           </p>
-          <span class="text-[11px] text-on-surface-variant mt-1">— Pejabat Presiden PERDASAMA Kebangsaan</span>
+          <span class="text-[11px] text-amber-200/80 mt-1 font-semibold">— Pejabat Presiden PERDASAMA Kebangsaan</span>
         </div>
       </section>
 
@@ -258,254 +210,317 @@
       <!-- ============================================== -->
       <section id="tab-directory" class="tab-pane flex-col w-full gap-4">
         <div class="flex flex-col gap-1">
-          <span class="text-label-sm font-label-sm font-bold text-tertiary uppercase tracking-wider">Rangkaian Korporat</span>
-          <h2 class="text-headline-md font-headline-md font-bold text-on-surface">Direktori Ahli Perniagaan</h2>
-          <p class="text-body-sm text-on-surface-variant">Cari dan jalin sinergi perniagaan rentas industri sesama ahli PERDASAMA.</p>
+          <span class="text-xs font-bold text-amber-700 uppercase tracking-wider">Rangkaian Korporat</span>
+          <h2 class="text-xl font-bold text-slate-900 tracking-tight">Direktori Ahli Perniagaan</h2>
+          <p class="text-xs text-slate-500">Cari dan jalin sinergi perniagaan rentas industri sesama ahli PERDASAMA.</p>
         </div>
 
         <!-- Search Bar -->
         <div class="relative w-full">
-          <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
-          <input id="directory-search-input" type="text" placeholder="Cari nama tokoh, syarikat, atau kluster..." class="w-full h-11 pl-11 pr-4 rounded-xl bg-surface-container border border-outline-variant/40 text-on-surface placeholder:text-outline-variant focus:outline-none focus:border-tertiary transition-colors text-body-sm" />
+          <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-[20px]">search</span>
+          <input id="directory-search-input" type="text" placeholder="Cari nama tokoh, syarikat, atau kluster..." class="w-full h-11 pl-11 pr-4 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-corp-blue focus:ring-2 focus:ring-blue-100 transition-all text-xs font-medium shadow-sm" />
         </div>
 
         <!-- Filter chips -->
-        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar text-xs">
-          <button data-cluster-filter="all" class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-semibold flex-shrink-0 transition-all">Semua</button>
-          <button data-cluster-filter="Bioteknologi & AI" class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-semibold flex-shrink-0 transition-all hover:text-on-surface">Biotek & AI</button>
-          <button data-cluster-filter="Tenaga Hijau & ESG" class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-semibold flex-shrink-0 transition-all hover:text-on-surface">Tenaga Hijau</button>
-          <button data-cluster-filter="Agromakanan & Eksport" class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-semibold flex-shrink-0 transition-all hover:text-on-surface">Agromakanan</button>
-          <button data-cluster-filter="Teknologi & Keselamatan Siber" class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-semibold flex-shrink-0 transition-all hover:text-on-surface">Siber & Tech</button>
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
+          <button data-cluster-filter="all" class="px-3 py-1.5 rounded-lg bg-corp-blue text-white font-bold flex-shrink-0 transition-all shadow-sm">Semua</button>
+          <button data-cluster-filter="Bioteknologi & AI" class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-600 font-semibold flex-shrink-0 transition-all hover:border-corp-blue">Biotek & AI</button>
+          <button data-cluster-filter="Tenaga Hijau & ESG" class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-600 font-semibold flex-shrink-0 transition-all hover:border-corp-blue">Tenaga Hijau</button>
+          <button data-cluster-filter="Agromakanan & Eksport" class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-600 font-semibold flex-shrink-0 transition-all hover:border-corp-blue">Agromakanan</button>
+          <button data-cluster-filter="Teknologi & Keselamatan Siber" class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-600 font-semibold flex-shrink-0 transition-all hover:border-corp-blue">Siber & Tech</button>
         </div>
 
         <!-- Directory List -->
         <div id="directory-items-list" class="flex flex-col gap-2.5">
-          <!-- Item 1 (Self) -->
-          <div class="directory-item bg-surface-container rounded-2xl p-3.5 border border-tertiary/30 flex flex-col gap-2.5" data-cluster="Bioteknologi & AI">
+          <!-- Member 1 (Self) -->
+          <div class="directory-item luxury-white-card rounded-2xl p-4 flex flex-col gap-2.5 border-l-4 border-l-amber-500" data-cluster="Bioteknologi & AI">
             <div class="flex items-start justify-between gap-2">
               <div class="flex items-center gap-3 min-w-0">
-                <img class="w-12 h-12 rounded-xl object-cover ring-2 ring-tertiary/40 flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZAwA1TGYoxecYF0pirKumKQCCY0HdzsexvgbIKmu9_g2SVltr0XY2ZGJYD4a9v2yrYjS3ju8v0mUquwb_5JLVG5FNgw65CEZ38MgcgOXA0undoOOFumypFplwb-ACduFZjLOP78q6FPMA_Z8_PlRLGaZ0dVbt8QPej42XIuHW4GFxyfwLkwtpVmekgX7RR6OdWsItCFJJIQJw-bZiQ901K_sLemzHE5sLLIuQdExCGlOitrg024gd" alt="Dato' Dr. Megat Azlan"/>
+                <img class="w-12 h-12 rounded-xl object-cover ring-2 ring-amber-400 flex-shrink-0 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZAwA1TGYoxecYF0pirKumKQCCY0HdzsexvgbIKmu9_g2SVltr0XY2ZGJYD4a9v2yrYjS3ju8v0mUquwb_5JLVG5FNgw65CEZ38MgcgOXA0undoOOFumypFplwb-ACduFZjLOP78q6FPMA_Z8_PlRLGaZ0dVbt8QPej42XIuHW4GFxyfwLkwtpVmekgX7RR6OdWsItCFJJIQJw-bZiQ901K_sLemzHE5sLLIuQdExCGlOitrg024gd" alt="Dato' Dr. Megat Azlan"/>
                 <div class="flex flex-col min-w-0">
                   <div class="flex items-center gap-1.5">
-                    <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-tertiary/15 text-tertiary border border-tertiary/30 uppercase">Platinum</span>
-                    <span class="text-[10px] text-secondary font-semibold font-mono">#PDS-MY-2025-0849</span>
+                    <span class="text-[9px] font-extrabold px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 border border-amber-300 uppercase">Platinum Korporat</span>
+                    <span class="text-[10px] text-corp-blue font-bold font-mono">#PDS-MY-2025-0849</span>
                   </div>
-                  <h4 class="font-headline-sm text-sm font-bold text-on-surface truncate mt-0.5">Dato' Dr. Megat Azlan bin Megat Tariq</h4>
-                  <p class="text-[12px] text-on-surface-variant truncate">Apex BioVentures Group Sdn Bhd</p>
+                  <h4 class="font-bold text-sm text-slate-900 truncate mt-0.5">Dato' Dr. Megat Azlan bin Megat Tariq</h4>
+                  <p class="text-[11px] text-slate-500 truncate">Apex BioVentures Group Sdn Bhd</p>
                 </div>
               </div>
             </div>
-            <div class="flex items-center justify-between pt-2 border-t border-outline-variant/20 text-xs">
-              <span class="text-on-surface-variant flex items-center gap-1">
-                <span class="material-symbols-outlined text-[14px] text-tertiary">biotech</span> Bioteknologi & AI
+            <div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs">
+              <span class="text-slate-600 flex items-center gap-1 font-medium">
+                <span class="material-symbols-outlined text-[15px] text-corp-blue">biotech</span> Bioteknologi & AI
               </span>
-              <span class="font-bold text-secondary">Hasil: RM 85.0M</span>
+              <span class="font-bold text-emerald-700">Hasil: RM 85.0M</span>
             </div>
           </div>
 
-          <!-- Item 2 -->
-          <div class="directory-item bg-surface-container rounded-2xl p-3.5 border border-outline-variant/30 flex flex-col gap-2.5" data-cluster="Tenaga Hijau & ESG">
+          <!-- Member 2 -->
+          <div class="directory-item luxury-white-card rounded-2xl p-4 flex flex-col gap-2.5" data-cluster="Tenaga Hijau & ESG">
             <div class="flex items-start justify-between gap-2">
               <div class="flex items-center gap-3 min-w-0">
-                <img class="w-12 h-12 rounded-xl object-cover ring-2 ring-primary/40 flex-shrink-0" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="Tan Sri Ir. Ahmad Zulkifli"/>
+                <img class="w-12 h-12 rounded-xl object-cover ring-2 ring-slate-200 flex-shrink-0 shadow-sm" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="Tan Sri Ir. Ahmad Zulkifli"/>
                 <div class="flex flex-col min-w-0">
                   <div class="flex items-center gap-1.5">
-                    <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-tertiary/15 text-tertiary border border-tertiary/30 uppercase">Platinum</span>
-                    <span class="text-[10px] text-on-surface-variant font-mono">#PDS-MY-2024-0312</span>
+                    <span class="text-[9px] font-extrabold px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 border border-amber-300 uppercase">Platinum</span>
+                    <span class="text-[10px] text-slate-500 font-mono">#PDS-MY-2024-0312</span>
                   </div>
-                  <h4 class="font-headline-sm text-sm font-bold text-on-surface truncate mt-0.5">Tan Sri Ir. Ahmad Zulkifli</h4>
-                  <p class="text-[12px] text-on-surface-variant truncate">Nusantara Infra & Green Energy Bhd</p>
+                  <h4 class="font-bold text-sm text-slate-900 truncate mt-0.5">Tan Sri Ir. Ahmad Zulkifli</h4>
+                  <p class="text-[11px] text-slate-500 truncate">Nusantara Infra & Green Energy Bhd</p>
                 </div>
               </div>
-              <button onclick="showToast('Permintaan sambungan B2B dihantar kepada Tan Sri Ahmad')" class="w-8 h-8 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary hover:bg-primary/20">
+              <button onclick="showToast('Permintaan sambungan B2B dihantar kepada Tan Sri Ahmad')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-blue-50 text-corp-blue flex items-center justify-center transition-all border border-slate-200">
                 <span class="material-symbols-outlined text-[18px]">person_add</span>
               </button>
             </div>
-            <div class="flex items-center justify-between pt-2 border-t border-outline-variant/20 text-xs">
-              <span class="text-on-surface-variant flex items-center gap-1">
-                <span class="material-symbols-outlined text-[14px] text-secondary">solar_power</span> Tenaga Hijau & ESG
+            <div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs">
+              <span class="text-slate-600 flex items-center gap-1 font-medium">
+                <span class="material-symbols-outlined text-[15px] text-emerald-600">solar_power</span> Tenaga Hijau & ESG
               </span>
-              <span class="font-bold text-on-surface">Hasil: RM 142.0M</span>
+              <span class="font-bold text-slate-900">Hasil: RM 142.0M</span>
             </div>
           </div>
 
-          <!-- Item 3 -->
-          <div class="directory-item bg-surface-container rounded-2xl p-3.5 border border-outline-variant/30 flex flex-col gap-2.5" data-cluster="Agromakanan & Eksport">
+          <!-- Member 3 -->
+          <div class="directory-item luxury-white-card rounded-2xl p-4 flex flex-col gap-2.5" data-cluster="Agromakanan & Eksport">
             <div class="flex items-start justify-between gap-2">
               <div class="flex items-center gap-3 min-w-0">
-                <img class="w-12 h-12 rounded-xl object-cover ring-2 ring-secondary/40 flex-shrink-0" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80" alt="Datin Seri Faridah Hanim"/>
+                <img class="w-12 h-12 rounded-xl object-cover ring-2 ring-slate-200 flex-shrink-0 shadow-sm" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80" alt="Datin Seri Faridah Hanim"/>
                 <div class="flex flex-col min-w-0">
                   <div class="flex items-center gap-1.5">
-                    <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-secondary/15 text-secondary border border-secondary/30 uppercase">Emas</span>
-                    <span class="text-[10px] text-on-surface-variant font-mono">#PDS-MY-2025-0199</span>
+                    <span class="text-[9px] font-extrabold px-1.5 py-0.2 rounded bg-amber-50 text-amber-700 border border-amber-200 uppercase">Emas Korporat</span>
+                    <span class="text-[10px] text-slate-500 font-mono">#PDS-MY-2025-0199</span>
                   </div>
-                  <h4 class="font-headline-sm text-sm font-bold text-on-surface truncate mt-0.5">Datin Seri Faridah Hanim</h4>
-                  <p class="text-[12px] text-on-surface-variant truncate">Selera Warisan Halal Foodtech Sdn Bhd</p>
+                  <h4 class="font-bold text-sm text-slate-900 truncate mt-0.5">Datin Seri Faridah Hanim</h4>
+                  <p class="text-[11px] text-slate-500 truncate">Selera Warisan Halal Foodtech Sdn Bhd</p>
                 </div>
               </div>
-              <button onclick="showToast('Permintaan sambungan B2B dihantar kepada Datin Seri Faridah')" class="w-8 h-8 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary hover:bg-primary/20">
+              <button onclick="showToast('Permintaan sambungan B2B dihantar kepada Datin Seri Faridah')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-blue-50 text-corp-blue flex items-center justify-center transition-all border border-slate-200">
                 <span class="material-symbols-outlined text-[18px]">person_add</span>
               </button>
             </div>
-            <div class="flex items-center justify-between pt-2 border-t border-outline-variant/20 text-xs">
-              <span class="text-on-surface-variant flex items-center gap-1">
-                <span class="material-symbols-outlined text-[14px] text-tertiary">restaurant</span> Agromakanan & Eksport
+            <div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs">
+              <span class="text-slate-600 flex items-center gap-1 font-medium">
+                <span class="material-symbols-outlined text-[15px] text-amber-600">restaurant</span> Agromakanan & Eksport
               </span>
-              <span class="font-bold text-on-surface">Hasil: RM 48.5M</span>
-            </div>
-          </div>
-
-          <!-- Item 4 -->
-          <div class="directory-item bg-surface-container rounded-2xl p-3.5 border border-outline-variant/30 flex flex-col gap-2.5" data-cluster="Teknologi & Keselamatan Siber">
-            <div class="flex items-start justify-between gap-2">
-              <div class="flex items-center gap-3 min-w-0">
-                <img class="w-12 h-12 rounded-xl object-cover ring-2 ring-primary/40 flex-shrink-0" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80" alt="Dato' Kamarulzaman Hashim"/>
-                <div class="flex flex-col min-w-0">
-                  <div class="flex items-center gap-1.5">
-                    <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-secondary/15 text-secondary border border-secondary/30 uppercase">Emas</span>
-                    <span class="text-[10px] text-on-surface-variant font-mono">#PDS-MY-2024-0671</span>
-                  </div>
-                  <h4 class="font-headline-sm text-sm font-bold text-on-surface truncate mt-0.5">Dato' Kamarulzaman Hashim</h4>
-                  <p class="text-[12px] text-on-surface-variant truncate">SiberNetica Solutions Malaysia</p>
-                </div>
-              </div>
-              <button onclick="showToast('Permintaan sambungan B2B dihantar kepada Dato Kamarulzaman')" class="w-8 h-8 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary hover:bg-primary/20">
-                <span class="material-symbols-outlined text-[18px]">person_add</span>
-              </button>
-            </div>
-            <div class="flex items-center justify-between pt-2 border-t border-outline-variant/20 text-xs">
-              <span class="text-on-surface-variant flex items-center gap-1">
-                <span class="material-symbols-outlined text-[14px] text-primary">security</span> Teknologi & Siber
-              </span>
-              <span class="font-bold text-on-surface">Hasil: RM 32.0M</span>
+              <span class="font-bold text-slate-900">Hasil: RM 48.5M</span>
             </div>
           </div>
         </div>
       </section>
 
       <!-- ============================================== -->
-      <!-- TAB 3: KEAHLIAN (EXACT REQUESTED DIGITAL CARD) -->
+      <!-- TAB 3: KEAHLIAN (EXCLUSIVE VIRTUAL CREDIT CARD)-->
       <!-- ============================================== -->
       <section id="tab-membership" class="tab-pane active flex-col w-full gap-5">
         
-        <!-- GOLD METALLIC CARD -->
-        <div class="relative gold-metallic-card rounded-2xl p-5 border border-tertiary/35 overflow-hidden">
-          <div class="absolute -right-16 -top-16 w-44 h-44 rounded-full bg-tertiary/10 blur-2xl pointer-events-none"></div>
-          <div class="absolute -left-12 -bottom-12 w-36 h-36 rounded-full bg-primary/10 blur-xl pointer-events-none"></div>
-          
-          <div class="relative z-10 flex items-center justify-between pb-3 border-b border-outline-variant/30">
-            <div class="flex items-center gap-2">
-              <div class="w-8 h-8 rounded-lg bg-surface-container-highest/80 flex items-center justify-center border border-tertiary/40">
-                <span class="material-symbols-outlined text-tertiary" style="font-size: 18px;">stars</span>
-              </div>
-              <div>
-                <span class="block text-[11px] font-extrabold uppercase tracking-widest text-tertiary">PERDASAMA KEBANGSAAN</span>
-                <span class="block text-[10px] text-on-surface-variant leading-none font-medium">Dewan Usahawan Melayu Malaysia</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 bg-gradient-to-r from-secondary-container/40 to-secondary/20 px-2.5 py-1 rounded-full border border-secondary/40 text-secondary text-label-sm font-label-sm">
-              <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
-              <span>Ahli Seumur Hidup</span>
-            </div>
+        <!-- Virtual Card Controls & Flip Hint -->
+        <div class="flex items-center justify-between px-1">
+          <div class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+            <span class="text-xs font-extrabold text-corp-blue uppercase tracking-wider">KAD KORPORAT MAYA</span>
+            <span class="text-[10px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full border border-amber-300">PLATINUM</span>
           </div>
+          <button id="btn-toggle-flip" onclick="toggleCardFlip()" class="text-xs text-amber-700 hover:text-amber-800 font-bold flex items-center gap-1 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200 transition-transform active:scale-95">
+            <span class="material-symbols-outlined text-[16px]">sync</span>
+            <span id="flip-hint-text">Pusingkan Kad (Flip)</span>
+          </button>
+        </div>
 
-          <div class="relative z-10 mt-4 flex items-start justify-between gap-3">
-            <div class="flex flex-col">
-              <div class="inline-flex items-center gap-1.5 mb-1">
-                <span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-tertiary/15 text-tertiary border border-tertiary/30">PLATINUM KORPORAT</span>
-                <span class="material-symbols-outlined text-tertiary" style="font-size: 14px;">verified</span>
+        <!-- 3D VIRTUAL CREDIT CARD -->
+        <div class="virtual-card-perspective w-full">
+          <div id="virtual-credit-card" class="virtual-card-wrapper" onclick="toggleCardFlip()">
+            
+            <!-- FRONT FACE OF CREDIT CARD -->
+            <div class="virtual-card-front">
+              <div class="card-guilloche"></div>
+              <div class="card-holographic-sheen"></div>
+              
+              <!-- Card Top Row: Header & Issuer Brand -->
+              <div class="relative z-10 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-amber-300 via-amber-400 to-amber-600 flex items-center justify-center shadow-md border border-amber-200">
+                    <span class="material-symbols-outlined text-slate-950 font-black" style="font-size: 17px;">shield</span>
+                  </div>
+                  <div>
+                    <span class="block text-[11px] font-extrabold tracking-widest text-amber-300 drop-shadow">PERDASAMA</span>
+                    <span class="block text-[8px] font-semibold text-slate-300 tracking-tight leading-none">DEWAN USAHAWAN MELAYU MALAYSIA</span>
+                  </div>
+                </div>
+
+                <!-- Platinum Status Pill -->
+                <div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-400/20 to-amber-500/10 border border-amber-400/60 shadow-inner">
+                  <span class="material-symbols-outlined text-amber-300" style="font-size: 13px;">workspace_premium</span>
+                  <span class="text-[9px] font-extrabold tracking-wider text-amber-300 uppercase">PLATINUM</span>
+                </div>
               </div>
-              <h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">Dato' Dr. Megat Azlan bin Megat Tariq</h2>
-              <p class="text-body-sm font-body-sm text-secondary font-semibold mt-0.5">Apex BioVentures Group Sdn Bhd</p>
-            </div>
-            <button id="btn-nfc-beam" title="Pancaran NFC" class="w-10 h-10 rounded-xl bg-surface-container-high/80 border border-outline-variant/50 flex items-center justify-center flex-shrink-0 text-primary-fixed shadow-inner hover:scale-105 active:scale-95 transition-all">
-              <span class="material-symbols-outlined" style="font-size: 22px;">contactless</span>
-            </button>
-          </div>
 
-          <div class="relative z-10 mt-4 bg-surface-container-lowest/60 rounded-xl p-3 border border-outline-variant/30 flex items-center justify-between">
-            <div class="flex flex-col">
-              <span class="text-[10px] font-label-sm text-on-surface-variant uppercase tracking-wider">No. Keahlian Rasmi</span>
-              <span class="font-headline-sm text-headline-sm text-on-surface font-mono font-bold tracking-widest">#PDS-MY-2025-0849</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <div class="text-right">
-                <span class="block text-[10px] font-label-sm text-on-surface-variant uppercase">Pelepasan NFC</span>
-                <span class="block text-[11px] font-semibold text-secondary">Diaktifkan</span>
+              <!-- Card Middle Row: EMV Chip & Contactless NFC Waves -->
+              <div class="relative z-10 flex items-center justify-between my-auto">
+                <div class="flex items-center gap-3">
+                  <!-- Real EMV Gold Smart Chip -->
+                  <div class="emv-gold-chip"></div>
+                  <!-- Contactless Waves Symbol -->
+                  <div class="flex items-center gap-0.5 text-amber-300">
+                    <svg class="w-6 h-6 stroke-current fill-none" viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round">
+                      <path d="M8.5 16.5a5 5 0 0 1 0-7"/>
+                      <path d="M12 18.5a8 8 0 0 1 0-11"/>
+                      <path d="M15.5 20.5a11 11 0 0 1 0-15"/>
+                    </svg>
+                  </div>
+                </div>
+                
+                <!-- Virtual Card Indicator -->
+                <div class="text-right">
+                  <span class="text-[9px] font-mono tracking-widest text-slate-300/80 uppercase block">VIRTUAL CORPORATE PASS</span>
+                  <span class="text-[10px] font-bold text-emerald-400 flex items-center justify-end gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> AKTIF
+                  </span>
+                </div>
               </div>
-              <div id="card-qr-box" onclick="openMemberQRModal()" title="Ketik untuk besarkan Kod QR rasmi" class="w-12 h-12 bg-white rounded-xl p-1 flex items-center justify-center flex-shrink-0 cursor-pointer shadow-lg hover:scale-105 active:scale-95 transition-transform group relative border border-tertiary/40">
-                <img id="card-mini-qr" alt="Kod QR Keahlian" class="w-full h-full object-contain rounded" />
-                <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface animate-pulse"></span>
+
+              <!-- Card Bottom Section: Embossed Digits, Member Name & Hologram Seal -->
+              <div class="relative z-10 flex flex-col gap-1.5">
+                <!-- Embossed Card Digits -->
+                <div class="card-emboss-number flex justify-between items-center tracking-widest text-sm sm:text-base">
+                  <span>5412</span>
+                  <span>2025</span>
+                  <span>0849</span>
+                  <span>8821</span>
+                </div>
+
+                <div class="flex items-end justify-between pt-1">
+                  <div class="flex flex-col min-w-0 pr-2">
+                    <div class="flex items-center gap-3 text-[9px] text-amber-200/90 font-mono">
+                      <span>MEMBER: <b>03/18</b></span>
+                      <span>VALID THRU: <b>SEUMUR HIDUP</b></span>
+                    </div>
+                    <span class="card-emboss-name text-xs sm:text-[13px] truncate font-extrabold text-white mt-0.5">
+                      DATO' DR. MEGAT AZLAN
+                    </span>
+                    <span class="text-[10px] font-medium text-amber-300/90 truncate">
+                      Apex BioVentures Group Sdn Bhd
+                    </span>
+                  </div>
+
+                  <!-- Interlocking Hologram Crest Seal -->
+                  <div class="card-hologram-seal flex-shrink-0" title="Mohor Keselamatan Hologram">
+                    <div class="card-hologram-circle-1"></div>
+                    <div class="card-hologram-circle-2"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- BACK FACE OF CREDIT CARD (MAGNETIC STRIPE & REAL SCANNABLE QR) -->
+            <div class="virtual-card-back">
+              <div class="card-guilloche"></div>
+              
+              <!-- Black Magnetic Stripe -->
+              <div class="card-magnetic-stripe"></div>
+
+              <!-- Signature Panel & CVV -->
+              <div class="px-5 my-auto flex flex-col gap-2 relative z-10">
+                <div class="flex items-center gap-3">
+                  <div class="card-signature-panel flex-1">
+                    <span class="card-cursive-sig">Dato' Dr. Megat Azlan</span>
+                    <span class="text-[9px] font-mono text-slate-400">AUTHORIZED SIGNATURE</span>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <span class="text-[8px] font-mono text-slate-300">CVV</span>
+                    <div class="card-cvv-box">849</div>
+                  </div>
+                </div>
+
+                <!-- Back Details: Scannable QR & Verification ID -->
+                <div class="flex items-center justify-between gap-3 bg-slate-900/80 p-2.5 rounded-xl border border-amber-400/40">
+                  <div class="flex flex-col text-left">
+                    <span class="text-[9px] font-bold text-amber-300 uppercase tracking-wider">KOD QR PENGESAHAN RASMI</span>
+                    <span class="text-xs font-mono font-bold text-white tracking-widest mt-0.5">#PDS-MY-2025-0849</span>
+                    <span class="text-[9px] text-slate-300 mt-1">Imbas terus untuk semakan keahlian & pelepasan majlis.</span>
+                  </div>
+                  
+                  <!-- Real Scannable QR on Card Back -->
+                  <div class="w-14 h-14 bg-white p-1 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg border border-amber-400">
+                    <img id="card-mini-qr" alt="Kod QR Keahlian" class="w-full h-full object-contain" />
+                  </div>
+                </div>
+
+                <div class="text-[8px] text-slate-400 text-center leading-tight">
+                  KAD MAYA EKSKLUSIF PERDASAMA • HAK MILIK DEWAN USAHAWAN MELAYU MALAYSIA.
+                </div>
+              </div>
+
+              <!-- Back Bottom Bar -->
+              <div class="px-5 pb-3 flex items-center justify-between text-[9px] text-slate-400 relative z-10 border-t border-slate-800 pt-1.5">
+                <span>WWW.PERDASAMA.ORG.MY</span>
+                <span class="text-amber-300 font-bold">24/7 VIP CONCIERGE</span>
               </div>
             </div>
-          </div>
 
-          <div class="relative z-10 mt-3 flex items-center justify-between text-body-sm text-on-surface-variant pt-2 border-t border-outline-variant/25">
-            <div class="flex items-center gap-1 text-[11px]">
-              <span class="text-outline">Daftar:</span>
-              <span class="text-on-surface font-medium">12 Mac 2018</span>
-            </div>
-            <div class="flex items-center gap-1 text-[11px]">
-              <span class="text-outline">Sah:</span>
-              <span class="text-secondary font-medium">Seumur Hidup</span>
-            </div>
-          </div>
-
-          <div class="relative z-10 mt-3 pt-1 flex items-center gap-2">
-            <button id="btn-wallet" class="flex-1 h-9 rounded-lg bg-surface-container-high/80 hover:bg-surface-container-highest border border-tertiary/30 text-tertiary flex items-center justify-center gap-1.5 text-label-md font-label-md active:scale-98 transition-transform">
-              <span class="material-symbols-outlined" style="font-size: 16px;">wallet</span>
-              <span>Simpan ke Wallet</span>
-            </button>
-            <button id="btn-scan-qr" class="h-9 px-3 rounded-lg bg-surface-container-high/80 hover:bg-surface-container-highest border border-outline-variant/40 text-on-surface flex items-center justify-center gap-1.5 text-label-md font-label-md active:scale-98 transition-transform">
-              <span class="material-symbols-outlined text-primary" style="font-size: 16px;">qr_code_scanner</span>
-              <span>Imbas QR</span>
-            </button>
           </div>
         </div>
 
+        <!-- VIRTUAL CARD ACTION BUTTONS -->
+        <div class="grid grid-cols-3 gap-2">
+          <button id="btn-wallet" class="h-10 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-amber-600" style="font-size: 18px;">wallet</span>
+            <span>Simpan Wallet</span>
+          </button>
+          <button onclick="openMemberQRModal()" class="h-10 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-corp-blue" style="font-size: 18px;">qr_code_2</span>
+            <span>Besarkan QR</span>
+          </button>
+          <button id="btn-scan-qr" class="h-10 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-emerald-600" style="font-size: 18px;">qr_code_scanner</span>
+            <span>Imbas QR</span>
+          </button>
+        </div>
+
         <!-- DOSSIER USAHAWAN & PERNIAGAAN -->
-        <section class="bg-surface-container rounded-2xl p-space-md border border-outline-variant/30 flex flex-col gap-3.5">
+        <section class="luxury-white-card rounded-2xl p-4 flex flex-col gap-3.5 border-t-4 border-t-corp-blue">
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-secondary" style="font-size: 20px;">domain_verification</span>
-              <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Dossier Usahawan &amp; Perniagaan</h3>
+              <span class="material-symbols-outlined text-corp-blue" style="font-size: 22px;">domain_verification</span>
+              <h3 class="font-bold text-slate-900 text-sm">Dossier Usahawan &amp; Perniagaan</h3>
             </div>
-            <span class="px-2 py-0.5 rounded-full bg-secondary/10 border border-secondary/30 text-secondary text-[11px] font-semibold">Aktif • Seri B</span>
+            <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-800 text-[11px] font-bold">Aktif • Seri B</span>
           </div>
 
           <div class="flex flex-wrap gap-1.5">
-            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-high text-[11px] font-semibold text-primary border border-primary/20">
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-blue-50 text-[11px] font-bold text-corp-blue border border-blue-200">
               <span class="material-symbols-outlined" style="font-size: 13px;">biotech</span>Bioteknologi &amp; AI
             </span>
-            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-high text-[11px] font-semibold text-secondary border border-secondary/20">
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-50 text-[11px] font-bold text-emerald-800 border border-emerald-200">
               <span class="material-symbols-outlined" style="font-size: 13px;">hub</span>Kluster Inovasi Nasional
             </span>
-            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-high text-[11px] font-semibold text-tertiary border border-tertiary/20">
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 text-[11px] font-bold text-amber-800 border border-amber-200">
               <span class="material-symbols-outlined" style="font-size: 13px;">public</span>Eksport Serantau
             </span>
           </div>
 
           <div class="grid grid-cols-3 gap-2 mt-0.5">
-            <div class="bg-surface-container-low rounded-xl p-2.5 flex flex-col justify-between border border-outline-variant/20">
-              <span class="text-on-surface-variant font-label-sm text-[10px] uppercase font-bold">Hasil Tahunan</span>
-              <span class="font-headline-sm text-[17px] font-bold text-on-surface mt-1">RM 85.0M</span>
-              <span class="text-secondary text-[10px] font-semibold flex items-center gap-0.5 mt-1">
-                <span class="material-symbols-outlined" style="font-size: 12px;">trending_up</span>+34% YoY
+            <div class="bg-slate-50 rounded-xl p-3 flex flex-col justify-between border border-slate-200/80">
+              <span class="text-slate-500 font-bold text-[10px] uppercase tracking-wider">Hasil Tahunan</span>
+              <span class="text-lg font-black text-slate-900 mt-1">RM 85.0M</span>
+              <span class="text-emerald-700 text-[10px] font-bold flex items-center gap-0.5 mt-1">
+                <span class="material-symbols-outlined" style="font-size: 13px;">trending_up</span>+34% YoY
               </span>
             </div>
-            <div class="bg-surface-container-low rounded-xl p-2.5 flex flex-col justify-between border border-outline-variant/20">
-              <span class="text-on-surface-variant font-label-sm text-[10px] uppercase font-bold">Tenaga Kerja</span>
-              <span class="font-headline-sm text-[17px] font-bold text-on-surface mt-1">240 Staf</span>
-              <span class="text-outline text-[10px] font-semibold mt-1">Pekerja Tempatan</span>
+            <div class="bg-slate-50 rounded-xl p-3 flex flex-col justify-between border border-slate-200/80">
+              <span class="text-slate-500 font-bold text-[10px] uppercase tracking-wider">Tenaga Kerja</span>
+              <span class="text-lg font-black text-slate-900 mt-1">240 Staf</span>
+              <span class="text-slate-600 text-[10px] font-semibold mt-1">Pekerja Tempatan</span>
             </div>
-            <div class="bg-surface-container-low rounded-xl p-2.5 flex flex-col justify-between border border-outline-variant/20">
-              <span class="text-on-surface-variant font-label-sm text-[10px] uppercase font-bold">Skor Jaringan</span>
-              <span class="font-headline-sm text-[17px] font-bold text-secondary mt-1">98<span class="text-[11px] text-on-surface-variant font-normal">/100</span></span>
-              <span class="text-tertiary text-[10px] font-semibold mt-1">Super Connector</span>
+            <div class="bg-slate-50 rounded-xl p-3 flex flex-col justify-between border border-slate-200/80">
+              <span class="text-slate-500 font-bold text-[10px] uppercase tracking-wider">Skor Jaringan</span>
+              <span class="text-lg font-black text-corp-blue mt-1">98<span class="text-[11px] text-slate-400 font-normal">/100</span></span>
+              <span class="text-amber-700 text-[10px] font-bold mt-1">Super Connector</span>
             </div>
           </div>
 
-          <p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed bg-surface-container-low/60 rounded-xl p-3 border border-outline-variant/20">
+          <p class="text-xs text-slate-600 leading-relaxed bg-slate-50/80 rounded-xl p-3 border border-slate-200/80">
             Dato' Dr. Megat Azlan memimpin pengkomersialan diagnostik genomik dan automasi bionik berasaskan kecerdasan buatan (AI) di rantau ASEAN, berkhidmat sebagai Pengerusi Kluster Inovasi Kesihatan Perdasama.
           </p>
         </section>
@@ -513,48 +528,50 @@
         <!-- PERKHIDMATAN AHLI & KONSIERJ -->
         <section class="flex flex-col gap-2.5">
           <div class="flex items-center justify-between px-1">
-            <span class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider font-bold">Perkhidmatan Ahli &amp; Konsierj</span>
-            <span class="text-tertiary font-label-sm text-label-sm font-semibold">Keutamaan Korporat</span>
+            <span class="text-slate-600 text-xs uppercase tracking-wider font-extrabold">Perkhidmatan Ahli &amp; Konsierj</span>
+            <span class="text-amber-700 text-xs font-bold flex items-center gap-1">
+              <span class="material-symbols-outlined text-xs">star</span> Keutamaan Korporat
+            </span>
           </div>
 
-          <div class="grid grid-cols-2 gap-2">
-            <button class="service-card-btn flex items-center gap-2.5 bg-surface-container hover:bg-surface-container-high p-3 rounded-xl border border-outline-variant/30 text-left active:scale-98 transition-all">
-              <div class="w-9 h-9 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary flex-shrink-0">
+          <div class="grid grid-cols-2 gap-2.5">
+            <button class="service-card-btn flex items-center gap-2.5 bg-white hover:bg-slate-50 p-3 rounded-xl border border-slate-200 text-left active:scale-98 transition-all shadow-sm">
+              <div class="w-9 h-9 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-700 flex-shrink-0">
                 <span class="material-symbols-outlined" style="font-size: 20px;">badge</span>
               </div>
               <div>
-                <span class="block text-label-md font-label-md font-semibold text-on-surface">Pelepasan Maya</span>
-                <span class="block text-[10px] text-on-surface-variant">Akses majlis ekspres</span>
+                <span class="block text-xs font-bold text-slate-900">Pelepasan Maya</span>
+                <span class="block text-[10px] text-slate-500">Akses majlis ekspres</span>
               </div>
             </button>
 
-            <button class="service-card-btn flex items-center gap-2.5 bg-surface-container hover:bg-surface-container-high p-3 rounded-xl border border-outline-variant/30 text-left active:scale-98 transition-all">
-              <div class="w-9 h-9 rounded-lg bg-primary/15 flex items-center justify-center text-primary flex-shrink-0">
+            <button class="service-card-btn flex items-center gap-2.5 bg-white hover:bg-slate-50 p-3 rounded-xl border border-slate-200 text-left active:scale-98 transition-all shadow-sm">
+              <div class="w-9 h-9 rounded-lg bg-blue-100 flex items-center justify-center text-corp-blue flex-shrink-0">
                 <span class="material-symbols-outlined" style="font-size: 20px;">handshake</span>
               </div>
               <div>
-                <span class="block text-label-md font-label-md font-semibold text-on-surface">Padanan B2B</span>
-                <span class="block text-[10px] text-on-surface-variant">Pelaburan &amp; Kontrak</span>
+                <span class="block text-xs font-bold text-slate-900">Padanan B2B</span>
+                <span class="block text-[10px] text-slate-500">Pelaburan &amp; Kontrak</span>
               </div>
             </button>
 
-            <button class="service-card-btn flex items-center gap-2.5 bg-surface-container hover:bg-surface-container-high p-3 rounded-xl border border-outline-variant/30 text-left active:scale-98 transition-all">
-              <div class="w-9 h-9 rounded-lg bg-tertiary/15 flex items-center justify-center text-tertiary flex-shrink-0">
+            <button class="service-card-btn flex items-center gap-2.5 bg-white hover:bg-slate-50 p-3 rounded-xl border border-slate-200 text-left active:scale-98 transition-all shadow-sm">
+              <div class="w-9 h-9 rounded-lg bg-amber-100 flex items-center justify-center text-amber-700 flex-shrink-0">
                 <span class="material-symbols-outlined" style="font-size: 20px;">account_balance</span>
               </div>
               <div>
-                <span class="block text-label-md font-label-md font-semibold text-on-surface">Jaringan GLC</span>
-                <span class="block text-[10px] text-on-surface-variant">Lembaga &amp; Agensi</span>
+                <span class="block text-xs font-bold text-slate-900">Jaringan GLC</span>
+                <span class="block text-[10px] text-slate-500">Lembaga &amp; Agensi</span>
               </div>
             </button>
 
-            <button class="service-card-btn flex items-center gap-2.5 bg-surface-container hover:bg-surface-container-high p-3 rounded-xl border border-outline-variant/30 text-left active:scale-98 transition-all">
-              <div class="w-9 h-9 rounded-lg bg-primary-fixed-dim/15 flex items-center justify-center text-primary-fixed flex-shrink-0">
+            <button class="service-card-btn flex items-center gap-2.5 bg-white hover:bg-slate-50 p-3 rounded-xl border border-slate-200 text-left active:scale-98 transition-all shadow-sm">
+              <div class="w-9 h-9 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-700 flex-shrink-0">
                 <span class="material-symbols-outlined" style="font-size: 20px;">support_agent</span>
               </div>
               <div>
-                <span class="block text-label-md font-label-md font-semibold text-on-surface">Konsierj VIP</span>
-                <span class="block text-[10px] text-on-surface-variant">Bantuan eksekutif 24/7</span>
+                <span class="block text-xs font-bold text-slate-900">Konsierj VIP</span>
+                <span class="block text-[10px] text-slate-500">Bantuan eksekutif 24/7</span>
               </div>
             </button>
           </div>
@@ -564,61 +581,61 @@
         <section class="flex flex-col gap-2.5">
           <div class="flex items-center justify-between px-1">
             <div class="flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-primary" style="font-size: 18px;">group_work</span>
-              <span class="font-headline-sm text-headline-sm text-on-surface font-bold">Rangkaian Rakan Niaga &amp; Lembaga</span>
-              <span id="partners-count-badge" class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-1.5 py-0.2 rounded-full">2</span>
+              <span class="material-symbols-outlined text-corp-blue" style="font-size: 18px;">group_work</span>
+              <span class="text-xs font-extrabold text-slate-900 uppercase tracking-wider">Rangkaian Rakan Niaga &amp; Lembaga</span>
+              <span id="partners-count-badge" class="bg-blue-100 text-corp-blue font-extrabold text-[10px] px-2 py-0.2 rounded-full">2</span>
             </div>
-            <button id="btn-add-partner" class="text-primary font-label-sm text-label-sm uppercase tracking-wide hover:underline font-bold">+ Tambah Rakan</button>
+            <button id="btn-add-partner" class="text-corp-blue font-bold text-xs uppercase tracking-wide hover:underline">+ Tambah Rakan</button>
           </div>
 
           <div id="partners-list-container" class="flex flex-col gap-2">
             <!-- Partner 1 -->
-            <div class="bg-surface-container rounded-xl p-3 flex items-center justify-between gap-space-sm border border-outline-variant/30">
+            <div class="luxury-white-card rounded-xl p-3 flex items-center justify-between gap-3">
               <div class="flex items-center gap-3 min-w-0">
                 <div class="relative flex-shrink-0">
-                  <img alt="Datin Rachel Sterling" class="w-11 h-11 rounded-full object-cover ring-2 ring-primary/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuX7B5__N2ggcnbFB_iDsAvc-wGjv8fDswchJ1mHO0yHNIeL1teZ8p3F7gP6rc63vpucBLO6H2W5mCWGlYAsc7v51vZIBEq7INmUG2HOeOOUCxOKbnv4Rx_maEyqyGEzlm8dYO9Dfvild3lCRu98AFbfor7lwoIUttCBXvjCHUFyNffm-bcyVTHzNEzqtJyWFUM5JmOmxz07_dY1_aJnn2VXxv2MNy4KdGnf7i89Abdrx-Xdorgal6"/>
-                  <span class="absolute bottom-0 right-0 w-3 h-3 bg-secondary rounded-full ring-2 ring-surface"></span>
+                  <img alt="Datin Rachel Sterling" class="w-11 h-11 rounded-full object-cover ring-2 ring-blue-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuX7B5__N2ggcnbFB_iDsAvc-wGjv8fDswchJ1mHO0yHNIeL1teZ8p3F7gP6rc63vpucBLO6H2W5mCWGlYAsc7v51vZIBEq7INmUG2HOeOOUCxOKbnv4Rx_maEyqyGEzlm8dYO9Dfvild3lCRu98AFbfor7lwoIUttCBXvjCHUFyNffm-bcyVTHzNEzqtJyWFUM5JmOmxz07_dY1_aJnn2VXxv2MNy4KdGnf7i89Abdrx-Xdorgal6"/>
+                  <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 rounded-full ring-2 ring-white"></span>
                 </div>
                 <div class="flex flex-col min-w-0">
-                  <span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Datin Rachel Sterling</span>
-                  <span class="text-on-surface-variant font-body-sm text-[12px] truncate">Pengarah Saintifik &amp; Penyelidikan</span>
+                  <span class="text-xs font-bold text-slate-900 truncate">Datin Rachel Sterling</span>
+                  <span class="text-slate-500 text-[11px] truncate">Pengarah Saintifik &amp; Penyelidikan</span>
                   <div class="flex items-center gap-1.5 mt-1">
-                    <span class="bg-primary/15 text-primary px-1.5 py-0.2 rounded text-[10px] font-bold">Rakan Pengasas</span>
-                    <span class="bg-surface-container-high text-on-surface-variant px-1.5 py-0.2 rounded text-[10px]">Rakan Ekuiti</span>
+                    <span class="bg-blue-100 text-corp-blue px-1.5 py-0.2 rounded text-[10px] font-bold">Rakan Pengasas</span>
+                    <span class="bg-slate-100 text-slate-600 px-1.5 py-0.2 rounded text-[10px]">Rakan Ekuiti</span>
                   </div>
                 </div>
               </div>
               <div class="flex items-center gap-1.5 flex-shrink-0">
-                <a href="tel:+60123456789" aria-label="Hubungi Rachel" class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-95 transition-all border border-outline-variant/30">
+                <a href="tel:+60123456789" aria-label="Hubungi Rachel" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-blue-50 flex items-center justify-center text-slate-600 hover:text-corp-blue active:scale-95 transition-all border border-slate-200">
                   <span class="material-symbols-outlined" style="font-size: 18px;">call</span>
                 </a>
-                <a href="mailto:rachel@apexbio.com.my" aria-label="Emel Rachel" class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-95 transition-all border border-outline-variant/30">
+                <a href="mailto:rachel@apexbio.com.my" aria-label="Emel Rachel" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-blue-50 flex items-center justify-center text-slate-600 hover:text-corp-blue active:scale-95 transition-all border border-slate-200">
                   <span class="material-symbols-outlined" style="font-size: 18px;">mail</span>
                 </a>
               </div>
             </div>
 
             <!-- Partner 2 -->
-            <div class="bg-surface-container rounded-xl p-3 flex items-center justify-between gap-space-sm border border-outline-variant/30">
+            <div class="luxury-white-card rounded-xl p-3 flex items-center justify-between gap-3">
               <div class="flex items-center gap-3 min-w-0">
                 <div class="relative flex-shrink-0">
-                  <img alt="Daniel Wu" class="w-11 h-11 rounded-full object-cover ring-2 ring-secondary/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE7F3SOXoNITMKuXZ-oIi9GvuON5-duwT3BIhgD-L84Qc0XtAzPNnJU_5fkcCZHJrVIzMqKez1n7ADrKKT9pJ0Gb5FT582VtUallwL99QZR-4ElsmQwolYG7mifbA7AJe64X-g_L_DLdWwwdPXvr3gjpdgb0MC01zWxKTzqB0yTGaGSfnoAKEMoftexxZqaPVc2eBYhEzRnRsaLQOWoi6cLKNWenOcvrKx9pdN1bRXHf84_u1olamn"/>
-                  <span class="absolute bottom-0 right-0 w-3 h-3 bg-secondary rounded-full ring-2 ring-surface"></span>
+                  <img alt="Daniel Wu" class="w-11 h-11 rounded-full object-cover ring-2 ring-emerald-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE7F3SOXoNITMKuXZ-oIi9GvuON5-duwT3BIhgD-L84Qc0XtAzPNnJU_5fkcCZHJrVIzMqKez1n7ADrKKT9pJ0Gb5FT582VtUallwL99QZR-4ElsmQwolYG7mifbA7AJe64X-g_L_DLdWwwdPXvr3gjpdgb0MC01zWxKTzqB0yTGaGSfnoAKEMoftexxZqaPVc2eBYhEzRnRsaLQOWoi6cLKNWenOcvrKx9pdN1bRXHf84_u1olamn"/>
+                  <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 rounded-full ring-2 ring-white"></span>
                 </div>
                 <div class="flex flex-col min-w-0">
-                  <span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Daniel Wu</span>
-                  <span class="text-on-surface-variant font-body-sm text-[12px] truncate">Rakan Modal Teroka, Horizon Alpha VC</span>
+                  <span class="text-xs font-bold text-slate-900 truncate">Daniel Wu</span>
+                  <span class="text-slate-500 text-[11px] truncate">Rakan Modal Teroka, Horizon Alpha VC</span>
                   <div class="flex items-center gap-1.5 mt-1">
-                    <span class="bg-secondary/15 text-secondary px-1.5 py-0.2 rounded text-[10px] font-bold">Pelabur Seri B</span>
-                    <span class="bg-surface-container-high text-on-surface-variant px-1.5 py-0.2 rounded text-[10px]">Ahli Lembaga</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded text-[10px] font-bold">Pelabur Seri B</span>
+                    <span class="bg-slate-100 text-slate-600 px-1.5 py-0.2 rounded text-[10px]">Ahli Lembaga</span>
                   </div>
                 </div>
               </div>
               <div class="flex items-center gap-1.5 flex-shrink-0">
-                <a href="tel:+60198765432" aria-label="Hubungi Daniel" class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-secondary active:scale-95 transition-all border border-outline-variant/30">
+                <a href="tel:+60198765432" aria-label="Hubungi Daniel" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-emerald-50 flex items-center justify-center text-slate-600 hover:text-emerald-700 active:scale-95 transition-all border border-slate-200">
                   <span class="material-symbols-outlined" style="font-size: 18px;">call</span>
                 </a>
-                <a href="mailto:daniel@horizonalpha.vc" aria-label="Emel Daniel" class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-secondary active:scale-95 transition-all border border-outline-variant/30">
+                <a href="mailto:daniel@horizonalpha.vc" aria-label="Emel Daniel" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-emerald-50 flex items-center justify-center text-slate-600 hover:text-emerald-700 active:scale-95 transition-all border border-slate-200">
                   <span class="material-symbols-outlined" style="font-size: 18px;">mail</span>
                 </a>
               </div>
@@ -630,26 +647,26 @@
         <section class="flex flex-col gap-2.5">
           <div class="flex items-center justify-between px-1">
             <div class="flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-tertiary" style="font-size: 18px;">event_note</span>
-              <span class="font-headline-sm text-headline-sm text-on-surface font-bold">Aktiviti &amp; Faedah Keahlian Terkini</span>
+              <span class="material-symbols-outlined text-amber-600" style="font-size: 18px;">event_note</span>
+              <span class="text-xs font-extrabold text-slate-900 uppercase tracking-wider">Aktiviti &amp; Faedah Keahlian Terkini</span>
             </div>
-            <button id="btn-full-archive" class="text-tertiary font-label-sm text-label-sm uppercase tracking-wide font-bold hover:underline">Arkib Penuh</button>
+            <button id="btn-full-archive" class="text-amber-700 text-xs font-bold uppercase tracking-wide hover:underline">Arkib Penuh</button>
           </div>
 
           <div class="flex flex-col gap-2">
             <!-- Activity 1 -->
-            <div class="bg-surface-container rounded-xl p-3 flex gap-3 items-start border border-outline-variant/30">
-              <div class="w-8 h-8 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary flex-shrink-0 mt-0.5">
+            <div class="luxury-white-card rounded-xl p-3 flex gap-3 items-start">
+              <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-700 flex-shrink-0 mt-0.5">
                 <span class="material-symbols-outlined" style="font-size: 18px;">flight_takeoff</span>
               </div>
               <div class="flex flex-col min-w-0 flex-1">
                 <div class="flex items-center justify-between gap-1">
-                  <span class="font-label-md text-label-md text-on-surface font-bold">Akses Delegasi MIDA &amp; MITI</span>
-                  <span class="text-on-surface-variant font-label-sm text-[11px] flex-shrink-0">Hari ini, 10:15 PG</span>
+                  <span class="text-xs font-bold text-slate-900">Akses Delegasi MIDA &amp; MITI</span>
+                  <span class="text-slate-400 text-[10px] flex-shrink-0">Hari ini, 10:15 PG</span>
                 </div>
-                <span class="text-on-surface-variant font-body-sm text-[12px] mt-0.5">Disahkan sebagai delegasi rasmi Perdasama ke Misi Dagangan &amp; Pelaburan Davos 2025.</span>
+                <span class="text-slate-600 text-[11px] mt-0.5">Disahkan sebagai delegasi rasmi Perdasama ke Misi Dagangan &amp; Pelaburan Davos 2025.</span>
                 <div class="mt-2 flex items-center gap-2">
-                  <span class="bg-surface-container-high px-2 py-0.5 rounded text-[10px] font-bold text-secondary flex items-center gap-1">
+                  <span class="bg-emerald-50 text-emerald-800 border border-emerald-200 px-2 py-0.5 rounded text-[10px] font-bold flex items-center gap-1">
                     <span class="material-symbols-outlined" style="font-size: 12px;">check_circle</span>Pelepasan Sah
                   </span>
                 </div>
@@ -657,38 +674,19 @@
             </div>
 
             <!-- Activity 2 -->
-            <div class="bg-surface-container rounded-xl p-3 flex gap-3 items-start border border-outline-variant/30">
-              <div class="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+            <div class="luxury-white-card rounded-xl p-3 flex gap-3 items-start">
+              <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-corp-blue flex-shrink-0 mt-0.5">
                 <span class="material-symbols-outlined" style="font-size: 18px;">award_star</span>
               </div>
               <div class="flex flex-col min-w-0 flex-1">
                 <div class="flex items-center justify-between gap-1">
-                  <span class="font-label-md text-label-md text-on-surface font-bold">Penerimaan Geran Peneraju Dana</span>
-                  <span class="text-on-surface-variant font-label-sm text-[11px] flex-shrink-0">Semalam, 2:30 PTG</span>
+                  <span class="text-xs font-bold text-slate-900">Penerimaan Geran Peneraju Dana</span>
+                  <span class="text-slate-400 text-[10px] flex-shrink-0">Semalam, 2:30 PTG</span>
                 </div>
-                <span class="text-on-surface-variant font-body-sm text-[12px] mt-0.5">Kelulusan fasilitasi sindiket awam-swasta RM 2.5M bagi peluasan infrastruktur pengkomputeran kuantum tempatan.</span>
+                <span class="text-slate-600 text-[11px] mt-0.5">Kelulusan fasilitasi sindiket awam-swasta RM 2.5M bagi peluasan infrastruktur pengkomputeran kuantum tempatan.</span>
                 <div class="mt-2 flex items-center gap-2">
-                  <span class="bg-surface-container-high px-2 py-0.5 rounded text-[10px] font-bold text-primary flex items-center gap-1">
+                  <span class="bg-blue-50 text-corp-blue border border-blue-200 px-2 py-0.5 rounded text-[10px] font-bold flex items-center gap-1">
                     <span class="material-symbols-outlined" style="font-size: 12px;">verified</span>Diberikan
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Activity 3 -->
-            <div class="bg-surface-container rounded-xl p-3 flex gap-3 items-start border border-outline-variant/30">
-              <div class="w-8 h-8 rounded-lg bg-tertiary/15 flex items-center justify-center text-tertiary flex-shrink-0 mt-0.5">
-                <span class="material-symbols-outlined" style="font-size: 18px;">stadium</span>
-              </div>
-              <div class="flex flex-col min-w-0 flex-1">
-                <div class="flex items-center justify-between gap-1">
-                  <span class="font-label-md text-label-md text-on-surface font-bold">Sidang Kemuncak Usahawan Global 2024</span>
-                  <span class="text-on-surface-variant font-label-sm text-[11px] flex-shrink-0">22 Okt 2024</span>
-                </div>
-                <span class="text-on-surface-variant font-body-sm text-[12px] mt-0.5">Penceramah Utama bagi integrasi GenAI Bioteknologi Nasional di Pusat Konvensyen Antarabangsa Kuala Lumpur.</span>
-                <div class="mt-2 flex items-center gap-2">
-                  <span class="bg-surface-container-high px-2 py-0.5 rounded text-[10px] font-bold text-tertiary flex items-center gap-1">
-                    <span class="material-symbols-outlined" style="font-size: 12px;">stars</span>Hos Pleno
                   </span>
                 </div>
               </div>
@@ -702,86 +700,60 @@
       <!-- ============================================== -->
       <section id="tab-agenda" class="tab-pane flex-col w-full gap-4">
         <div class="flex flex-col gap-1">
-          <span class="text-label-sm font-label-sm font-bold text-tertiary uppercase tracking-wider">Takwim Rasmi</span>
-          <h2 class="text-headline-md font-headline-md font-bold text-on-surface">Agenda & Misi Dagangan</h2>
-          <p class="text-body-sm text-on-surface-variant">Senarai persidangan, mesyuarat strategik, dan misi antarabangsa PERDASAMA.</p>
+          <span class="text-xs font-bold text-amber-700 uppercase tracking-wider">Takwim Rasmi</span>
+          <h2 class="text-xl font-bold text-slate-900 tracking-tight">Agenda & Misi Dagangan</h2>
+          <p class="text-xs text-slate-500">Senarai persidangan, mesyuarat strategik, dan misi antarabangsa PERDASAMA.</p>
         </div>
 
         <div class="flex flex-col gap-3">
           <!-- Event 1 -->
-          <div class="bg-surface-container rounded-2xl p-4 border border-outline-variant/30 flex flex-col gap-3">
+          <div class="luxury-white-card rounded-2xl p-4 flex flex-col gap-3 border-l-4 border-l-corp-blue">
             <div class="flex items-start justify-between gap-2">
               <div>
-                <span class="inline-flex items-center gap-1 text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-primary/15 text-primary border border-primary/30">Antarabangsa</span>
-                <h4 class="font-headline-sm font-bold text-on-surface mt-1.5">Misi Dagangan & Pelaburan Davos 2025</h4>
-                <p class="text-[12px] text-on-surface-variant mt-0.5">Davos Congress Centre, Switzerland</p>
+                <span class="inline-flex items-center gap-1 text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-blue-100 text-corp-blue border border-blue-200">Antarabangsa</span>
+                <h4 class="font-bold text-sm text-slate-900 mt-1">Misi Dagangan & Pelaburan Davos 2025</h4>
+                <p class="text-[11px] text-slate-500 mt-0.5">Davos Congress Centre, Switzerland</p>
               </div>
               <div class="text-right flex-shrink-0">
-                <span class="block text-secondary font-bold text-xs">18 - 23 Jan 2025</span>
-                <span class="block text-[10px] text-on-surface-variant">Sepanjang Hari</span>
+                <span class="block text-corp-blue font-bold text-xs">18 - 23 Jan 2025</span>
+                <span class="block text-[10px] text-slate-400">Sepanjang Hari</span>
               </div>
             </div>
-            <p class="text-body-sm text-on-surface-variant text-[13px] bg-surface-container-low p-2.5 rounded-xl border border-outline-variant/20">
+            <p class="text-xs text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
               Forum Ekonomi Dunia bersama MITI membabitkan perbincangan pelaburan langsung asing (FDI) sektor bioteknologi tinggi & AI.
             </p>
             <div class="flex items-center justify-between pt-1">
-              <span class="text-xs font-semibold text-tertiary flex items-center gap-1">
+              <span class="text-xs font-semibold text-amber-800 flex items-center gap-1">
                 <span class="material-symbols-outlined text-[16px]">groups</span> Delegasi Khas MIDA & MITI
               </span>
-              <button data-event-title="Misi Davos 2025" class="agenda-rsvp-btn attending h-8 px-3 rounded-lg bg-secondary text-on-secondary font-label-sm text-xs font-bold flex items-center gap-1 transition-all active:scale-95">
+              <button data-event-title="Misi Davos 2025" class="agenda-rsvp-btn attending h-8 px-3 rounded-lg bg-emerald-600 text-white text-xs font-bold flex items-center gap-1 transition-all active:scale-95 shadow-sm">
                 <span class="material-symbols-outlined text-[16px]">check_circle</span> Disahkan Hadir
               </button>
             </div>
           </div>
 
           <!-- Event 2 -->
-          <div class="bg-surface-container rounded-2xl p-4 border border-outline-variant/30 flex flex-col gap-3">
+          <div class="luxury-white-card rounded-2xl p-4 flex flex-col gap-3 border-l-4 border-l-amber-500">
             <div class="flex items-start justify-between gap-2">
               <div>
-                <span class="inline-flex items-center gap-1 text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-secondary/15 text-secondary border border-secondary/30">Eksklusif</span>
-                <h4 class="font-headline-sm font-bold text-on-surface mt-1.5">Sesi Padanan Perniagaan (B2B) GLC & Swasta</h4>
-                <p class="text-[12px] text-on-surface-variant mt-0.5">Grand Hyatt Kuala Lumpur</p>
+                <span class="inline-flex items-center gap-1 text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-100 text-amber-800 border border-amber-200">Eksklusif</span>
+                <h4 class="font-bold text-sm text-slate-900 mt-1">Sesi Padanan Perniagaan (B2B) GLC & Swasta</h4>
+                <p class="text-[11px] text-slate-500 mt-0.5">Grand Hyatt Kuala Lumpur</p>
               </div>
               <div class="text-right flex-shrink-0">
-                <span class="block text-secondary font-bold text-xs">5 Feb 2025</span>
-                <span class="block text-[10px] text-on-surface-variant">09:00 PG - 04:30 PTG</span>
+                <span class="block text-amber-700 font-bold text-xs">5 Feb 2025</span>
+                <span class="block text-[10px] text-slate-400">09:00 PG - 04:30 PTG</span>
               </div>
             </div>
-            <p class="text-body-sm text-on-surface-variant text-[13px] bg-surface-container-low p-2.5 rounded-xl border border-outline-variant/20">
+            <p class="text-xs text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
               Peluang pembekalan dan vendor strategik bersama Khazanah Nasional, PNB, dan syarikat berkaitan kerajaan.
             </p>
             <div class="flex items-center justify-between pt-1">
-              <span class="text-xs font-semibold text-on-surface-variant flex items-center gap-1">
+              <span class="text-xs font-semibold text-slate-500 flex items-center gap-1">
                 <span class="material-symbols-outlined text-[16px]">handshake</span> 40 Syarikat Korporat
               </span>
-              <button data-event-title="Sesi Padanan B2B GLC" class="agenda-rsvp-btn h-8 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/40 text-on-surface font-label-sm text-xs font-bold flex items-center gap-1 transition-all active:scale-95">
+              <button data-event-title="Sesi Padanan B2B GLC" class="agenda-rsvp-btn h-8 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 text-xs font-bold flex items-center gap-1 transition-all active:scale-95">
                 <span class="material-symbols-outlined text-[16px]">how_to_reg</span> RSVP Hadir
-              </button>
-            </div>
-          </div>
-
-          <!-- Event 3 -->
-          <div class="bg-surface-container rounded-2xl p-4 border border-outline-variant/30 flex flex-col gap-3">
-            <div class="flex items-start justify-between gap-2">
-              <div>
-                <span class="inline-flex items-center gap-1 text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-tertiary/15 text-tertiary border border-tertiary/30">Mesyuarat Agung</span>
-                <h4 class="font-headline-sm font-bold text-on-surface mt-1.5">Mesyuarat Agung Tahunan PERDASAMA Ke-26</h4>
-                <p class="text-[12px] text-on-surface-variant mt-0.5">Pusat Dagangan Dunia (WTC) KL</p>
-              </div>
-              <div class="text-right flex-shrink-0">
-                <span class="block text-secondary font-bold text-xs">14 Mac 2025</span>
-                <span class="block text-[10px] text-on-surface-variant">08:30 PG - 01:00 PTG</span>
-              </div>
-            </div>
-            <p class="text-body-sm text-on-surface-variant text-[13px] bg-surface-container-low p-2.5 rounded-xl border border-outline-variant/20">
-              Pembentangan Pelan Induk Pendigitalan Usahawan Melayu 2030 dan mandat pemilihan Majlis Tertinggi.
-            </p>
-            <div class="flex items-center justify-between pt-1">
-              <span class="text-xs font-semibold text-secondary flex items-center gap-1">
-                <span class="material-symbols-outlined text-[16px]">priority_high</span> Kehadiran Wajib
-              </span>
-              <button data-event-title="AGM PERDASAMA Ke-26" class="agenda-rsvp-btn attending h-8 px-3 rounded-lg bg-secondary text-on-secondary font-label-sm text-xs font-bold flex items-center gap-1 transition-all active:scale-95">
-                <span class="material-symbols-outlined text-[16px]">check_circle</span> Disahkan Hadir
               </button>
             </div>
           </div>
@@ -790,32 +762,36 @@
 
     </main>
 
-    <!-- FLOATING ACTION BUTTON -->
-    <div class="fixed bottom-20 max-w-[540px] w-full px-margin z-40 pb-safe flex justify-center pointer-events-none">
-      <button id="btn-share-digital-card" class="pointer-events-auto w-full max-w-sm h-12 px-space-lg rounded-2xl bg-gradient-to-r from-primary-container via-blue-600 to-indigo-700 text-on-primary-container shadow-[0_8px_24px_rgba(37,99,235,0.5)] flex items-center justify-center gap-2 font-label-md text-label-md font-bold tracking-wide transition-all active:scale-95 border border-primary/30 hover:brightness-110">
-        <span class="material-symbols-outlined" style="font-size: 20px;">contactless</span>
+    <!-- ============================================== -->
+    <!-- FLOATING ACTION BUTTON (CORPORATE BLUE & GOLD) -->
+    <!-- ============================================== -->
+    <div class="fixed bottom-20 max-w-[540px] w-full px-4 z-40 pb-safe flex justify-center pointer-events-none">
+      <button id="btn-share-digital-card" class="pointer-events-auto w-full max-w-sm h-12 px-6 rounded-2xl bg-gradient-to-r from-corp-navy via-corp-blue to-indigo-900 text-white shadow-[0_8px_25px_rgba(30,58,138,0.35)] flex items-center justify-center gap-2 text-xs font-extrabold tracking-wider transition-all active:scale-95 border-2 border-amber-400/80 hover:brightness-110">
+        <span class="material-symbols-outlined text-amber-300" style="font-size: 20px;">contactless</span>
         <span>KONGSI KAD DIGITAL PERDASAMA</span>
       </button>
     </div>
 
-    <!-- BOTTOM TAB NAVIGATION -->
-    <nav class="fixed bottom-0 max-w-[540px] w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl border-t border-outline-variant/30" data-active-classes="text-primary font-bold">
-      <div class="flex justify-around items-center h-16 px-space-xs">
-        <a class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="executive-overview" href="#overview">
+    <!-- ============================================== -->
+    <!-- BOTTOM TAB NAVIGATION                          -->
+    <!-- ============================================== -->
+    <nav class="fixed bottom-0 max-w-[540px] w-full z-50 pb-safe bg-white/95 backdrop-blur-xl border-t border-slate-200/90 shadow-lg" data-active-classes="text-corp-blue font-bold">
+      <div class="flex justify-around items-center h-16 px-1">
+        <a class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 text-slate-400 hover:text-corp-blue transition-colors" data-path="executive-overview" href="#overview">
           <span class="material-symbols-outlined" style="font-size: 22px;">space_dashboard</span>
-          <span class="font-label-sm text-[11px]">Ringkasan</span>
+          <span class="text-[11px] font-medium">Ringkasan</span>
         </a>
-        <a class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="pipeline-deals" href="#directory">
+        <a class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 text-slate-400 hover:text-corp-blue transition-colors" data-path="pipeline-deals" href="#directory">
           <span class="material-symbols-outlined" style="font-size: 22px;">manage_search</span>
-          <span class="font-label-sm text-[11px]">Direktori</span>
+          <span class="text-[11px] font-medium">Direktori</span>
         </a>
-        <a aria-current="page" class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 transition-colors text-tertiary font-bold" data-path="accounts-contacts" href="#membership">
-          <span class="material-symbols-outlined" style="font-size: 22px;">id_card</span>
-          <span class="font-label-sm text-[11px]">Keahlian</span>
+        <a aria-current="page" class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 transition-colors text-corp-blue font-bold" data-path="accounts-contacts" href="#membership">
+          <span class="material-symbols-outlined text-amber-600" style="font-size: 22px;">credit_card</span>
+          <span class="text-[11px] font-bold text-corp-blue">Keahlian</span>
         </a>
-        <a class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="agenda-tasks" href="#agenda">
+        <a class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 text-slate-400 hover:text-corp-blue transition-colors" data-path="agenda-tasks" href="#agenda">
           <span class="material-symbols-outlined" style="font-size: 22px;">event_available</span>
-          <span class="font-label-sm text-[11px]">Agenda</span>
+          <span class="text-[11px] font-medium">Agenda</span>
         </a>
       </div>
     </nav>
@@ -823,32 +799,32 @@
   </div>
 
   <!-- ============================================== -->
-  <!-- MODALS CONTAINER                               -->
+  <!-- MODALS CONTAINER (WHITE CORPORATE & GOLD)     -->
   <!-- ============================================== -->
 
-  <!-- MODAL: KOD QR KEAHLIAN RASMI (PAS KORPORAT) -->
+  <!-- MODAL: KOD QR KEAHLIAN RASMI -->
   <div id="modal-qr-code" class="modal-container hidden fixed inset-0 z-[85] items-center justify-center p-4">
-    <div class="modal-backdrop fixed inset-0 bg-black/85 backdrop-blur-md"></div>
-    <div class="relative w-full max-w-sm bg-surface-container rounded-3xl border border-tertiary/40 p-6 flex flex-col items-center gap-4 shadow-2xl modal-enter z-10">
-      <button data-close-modal="modal-qr-code" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+    <div class="modal-backdrop fixed inset-0 bg-slate-900/70 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-sm bg-white rounded-3xl border border-slate-200 p-6 flex flex-col items-center gap-4 shadow-2xl modal-enter z-10">
+      <button data-close-modal="modal-qr-code" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800">
         <span class="material-symbols-outlined text-[18px]">close</span>
       </button>
 
       <div class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center border border-tertiary/40">
-          <span class="material-symbols-outlined text-tertiary text-[18px]">qr_code_2</span>
+        <div class="w-9 h-9 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-corp-blue">
+          <span class="material-symbols-outlined text-[20px]">qr_code_2</span>
         </div>
         <div class="text-left">
-          <span class="block text-[10px] font-extrabold uppercase tracking-widest text-tertiary">PENGESAHAN RASMI</span>
-          <h3 class="font-headline-sm font-bold text-on-surface text-sm">Kod QR Ahli Korporat</h3>
+          <span class="block text-[10px] font-extrabold uppercase tracking-widest text-amber-600">PENGESAHAN RASMI</span>
+          <h3 class="font-bold text-slate-900 text-sm">Kod QR Ahli Korporat</h3>
         </div>
       </div>
 
       <!-- Real Scannable High-Res QR Box -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-2xl flex flex-col items-center border-2 border-tertiary/40 w-full max-w-[260px]">
-        <img id="modal-qr-code-img" alt="Kod QR Rasmi PERDASAMA" class="w-56 h-56 object-contain" />
+      <div class="bg-white p-4 rounded-2xl shadow-xl flex flex-col items-center border-2 border-amber-400 w-full max-w-[260px]">
+        <img id="modal-qr-code-img" alt="Kod QR Rasmi PERDASAMA" class="w-52 h-52 object-contain" />
         <div class="mt-2 text-center w-full">
-          <span class="block text-[12px] font-mono font-bold text-neutral-900 tracking-wider">#PDS-MY-2025-0849</span>
+          <span class="block text-xs font-mono font-bold text-slate-900 tracking-wider">#PDS-MY-2025-0849</span>
           <div class="flex items-center justify-center gap-1 text-[9px] font-bold text-emerald-700 uppercase tracking-wider mt-0.5">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
             <span>PERDASAMA VERIFIED PASS</span>
@@ -856,23 +832,23 @@
         </div>
       </div>
 
-      <div class="w-full bg-surface-container-low p-2.5 rounded-xl border border-outline-variant/30 flex items-center justify-between gap-2">
+      <div class="w-full bg-slate-50 p-2.5 rounded-xl border border-slate-200 flex items-center justify-between gap-2">
         <div class="flex flex-col min-w-0">
-          <span class="text-[9px] uppercase tracking-wider text-on-surface-variant font-bold">Pautan Pengesahan</span>
-          <span id="qr-verified-url" class="text-[11px] font-mono text-tertiary truncate">http://65.75.201.219:3000/#PDS-MY-2025-0849</span>
+          <span class="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Pautan Pengesahan</span>
+          <span id="qr-verified-url" class="text-[11px] font-mono text-corp-blue truncate">http://65.75.201.219:3000/#PDS-MY-2025-0849</span>
         </div>
-        <button id="btn-copy-qr-url" class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-primary transition-colors flex-shrink-0" title="Salin Pautan">
+        <button id="btn-copy-qr-url" class="p-2 rounded-lg bg-white border border-slate-200 text-slate-700 hover:text-corp-blue transition-colors flex-shrink-0" title="Salin Pautan">
           <span class="material-symbols-outlined text-[16px]">content_copy</span>
         </button>
       </div>
 
       <div class="w-full flex flex-col gap-2">
-        <button id="btn-download-qr-png" class="w-full h-11 rounded-xl bg-gradient-to-r from-secondary-container to-secondary text-on-secondary font-bold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all shadow-md">
-          <span class="material-symbols-outlined text-[18px]">download</span>
+        <button id="btn-download-qr-png" class="w-full h-11 rounded-xl bg-gradient-to-r from-corp-navy to-corp-blue text-white font-bold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all shadow-md border border-amber-400/60">
+          <span class="material-symbols-outlined text-amber-300 text-[18px]">download</span>
           <span>Muat Turun Gambar QR (PNG)</span>
         </button>
-        <button onclick="shareViaWhatsApp()" class="w-full h-10 rounded-xl bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/40 text-on-surface font-semibold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all">
-          <span class="material-symbols-outlined text-[16px] text-secondary">share</span>
+        <button onclick="shareViaWhatsApp()" class="w-full h-10 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-800 font-bold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all">
+          <span class="material-symbols-outlined text-[16px] text-emerald-600">share</span>
           <span>Kongsi Melalui WhatsApp</span>
         </button>
       </div>
@@ -881,35 +857,35 @@
 
   <!-- MODAL: KONGSI KAD DIGITAL / PELEPASAN NFC -->
   <div id="modal-share-card" class="modal-container hidden fixed inset-0 z-[80] items-center justify-center p-4">
-    <div class="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
-    <div class="relative w-full max-w-sm bg-surface-container rounded-3xl border border-tertiary/40 p-6 flex flex-col items-center gap-4 shadow-2xl modal-enter z-10">
-      <button data-close-modal="modal-share-card" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+    <div class="modal-backdrop fixed inset-0 bg-slate-900/70 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-sm bg-white rounded-3xl border border-slate-200 p-6 flex flex-col items-center gap-4 shadow-2xl modal-enter z-10">
+      <button data-close-modal="modal-share-card" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800">
         <span class="material-symbols-outlined text-[18px]">close</span>
       </button>
 
-      <div class="w-14 h-14 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary border border-secondary/30 nfc-pulse mt-2">
+      <div class="w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-600 border border-amber-200 nfc-pulse mt-2">
         <span class="material-symbols-outlined text-[32px]">contactless</span>
       </div>
 
       <div class="text-center">
-        <h3 class="font-headline-md font-bold text-on-surface">Pelepasan Kad Digital</h3>
-        <p class="text-body-sm text-on-surface-variant mt-1 text-xs">Dekatkan telefon anda untuk pemindahan NFC atau imbas kod QR di bawah.</p>
+        <h3 class="font-bold text-slate-900 text-base">Pelepasan Kad Digital Maya</h3>
+        <p class="text-slate-500 mt-1 text-xs">Dekatkan telefon anda untuk pemindahan NFC atau imbas kod QR di bawah.</p>
       </div>
 
-      <!-- Live QR Code Card -->
-      <div class="bg-white p-4 rounded-2xl shadow-xl flex flex-col items-center border border-neutral-200">
+      <!-- Real QR Code Card -->
+      <div class="bg-white p-4 rounded-2xl shadow-md flex flex-col items-center border-2 border-slate-200">
         <img id="share-modal-qr-img" alt="Kod QR Pelepasan Rasmi" class="w-48 h-48 object-contain" />
-        <span class="text-[11px] font-mono font-bold text-surface-container-highest mt-2 tracking-wider">#PDS-MY-2025-0849</span>
+        <span class="text-[11px] font-mono font-bold text-slate-800 mt-2 tracking-wider">#PDS-MY-2025-0849</span>
       </div>
 
       <!-- Action buttons -->
       <div class="w-full flex flex-col gap-2 mt-1">
-        <button id="btn-copy-card-link" class="w-full h-10 rounded-xl bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/40 text-on-surface font-semibold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all">
+        <button id="btn-copy-card-link" class="w-full h-10 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-bold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all">
           <span class="material-symbols-outlined text-[16px]">link</span>
           <span>Salin Pautan Kad</span>
         </button>
-        <button id="btn-download-vcard" class="w-full h-10 rounded-xl bg-gradient-to-r from-secondary-container to-secondary text-on-secondary font-bold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all shadow-md">
-          <span class="material-symbols-outlined text-[16px]">download</span>
+        <button id="btn-download-vcard" class="w-full h-10 rounded-xl bg-gradient-to-r from-corp-navy to-corp-blue text-white font-bold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all shadow-md">
+          <span class="material-symbols-outlined text-[16px] text-amber-300">download</span>
           <span>Muat Turun vCard (.vcf)</span>
         </button>
       </div>
@@ -918,37 +894,37 @@
 
   <!-- MODAL: SIMPAN KE WALLET -->
   <div id="modal-wallet" class="modal-container hidden fixed inset-0 z-[80] items-center justify-center p-4">
-    <div class="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
-    <div class="relative w-full max-w-sm bg-surface-container rounded-3xl border border-outline-variant/40 p-6 flex flex-col items-center gap-4 shadow-2xl modal-enter z-10">
-      <button data-close-modal="modal-wallet" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+    <div class="modal-backdrop fixed inset-0 bg-slate-900/70 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-sm bg-white rounded-3xl border border-slate-200 p-6 flex flex-col items-center gap-4 shadow-2xl modal-enter z-10">
+      <button data-close-modal="modal-wallet" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800">
         <span class="material-symbols-outlined text-[18px]">close</span>
       </button>
 
-      <div class="w-12 h-12 rounded-2xl bg-tertiary/15 flex items-center justify-center text-tertiary border border-tertiary/30 mt-2">
+      <div class="w-12 h-12 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-700 border border-amber-200 mt-2">
         <span class="material-symbols-outlined text-[28px]">wallet</span>
       </div>
 
       <div class="text-center">
-        <h3 class="font-headline-md font-bold text-on-surface">Simpan ke Dompet Digital</h3>
-        <p class="text-body-sm text-on-surface-variant text-xs mt-1">Akses pantas untuk pelepasan majlis rasmi tanpa talian Internet.</p>
+        <h3 class="font-bold text-slate-900 text-base">Simpan ke Dompet Digital</h3>
+        <p class="text-slate-500 text-xs mt-1">Akses pantas untuk pelepasan majlis rasmi tanpa talian Internet.</p>
       </div>
 
-      <div class="w-full bg-surface-container-low rounded-2xl p-4 border border-tertiary/30 flex flex-col gap-2">
+      <div class="w-full bg-slate-900 text-white rounded-2xl p-4 border border-amber-400/60 shadow-lg flex flex-col gap-2">
         <div class="flex items-center justify-between">
-          <span class="text-xs font-bold text-tertiary">PERDASAMA PAS KORPORAT</span>
-          <span class="text-[10px] bg-secondary/20 text-secondary px-2 py-0.5 rounded-full font-bold">PLATINUM</span>
+          <span class="text-xs font-bold text-amber-300">PERDASAMA VIRTUAL PASS</span>
+          <span class="text-[10px] bg-amber-400/20 text-amber-300 px-2 py-0.5 rounded-full font-bold border border-amber-400/40">PLATINUM</span>
         </div>
-        <div class="text-sm font-bold text-on-surface">Dato' Dr. Megat Azlan</div>
-        <div class="text-[11px] text-on-surface-variant font-mono">ID: #PDS-MY-2025-0849</div>
+        <div class="text-sm font-bold text-white">Dato' Dr. Megat Azlan</div>
+        <div class="text-[11px] text-slate-300 font-mono">ID: #PDS-MY-2025-0849</div>
       </div>
 
       <div class="w-full flex flex-col gap-2.5 mt-2">
-        <button onclick="showToast('Pas Apple Wallet berjaya dijana dan disimpan!'); closeModal('modal-wallet');" class="w-full h-11 rounded-xl bg-black hover:bg-neutral-900 border border-neutral-700 text-white font-semibold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all">
+        <button onclick="showToast('Pas Apple Wallet berjaya dijana dan disimpan!'); closeModal('modal-wallet');" class="w-full h-11 rounded-xl bg-black hover:bg-neutral-800 text-white font-semibold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all shadow-md">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 170 170"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.6-7.85-11.75-14.43-5.74-9.12-10.2-19.46-13.38-31.02-3.18-11.56-4.77-22.61-4.77-33.15 0-14.12 3.52-25.75 10.56-34.89 7.04-9.13 16.03-13.79 26.97-13.97 4.9 0 10.3 1.25 16.2 3.75 5.9 2.5 9.77 3.82 11.61 3.96 1.83-.14 5.92-1.53 12.26-4.17 6.34-2.64 11.83-3.82 16.48-3.54 11.63.74 20.89 4.98 27.78 12.73-10.02 6.07-14.9 14.61-14.65 25.62.24 9.38 3.89 17.27 10.96 23.66 4.3 3.96 9.4 6.83 15.3 8.62-2.3 6.9-5.3 14.24-9.02 22.02zM119.22 33.15c0-6.72 2.4-12.98 7.2-18.78 4.8-5.8 10.74-9.61 17.82-11.43.34 2.14.51 4.1.51 5.88 0 6.64-2.51 12.98-7.53 19.02-5.02 6.04-11.14 9.69-18.36 10.95-.23-1.85-.35-3.7-.35-5.55z"/></svg>
           <span>Tambah ke Apple Wallet</span>
         </button>
-        <button onclick="showToast('Pas Google Wallet berjaya dijana dan disimpan!'); closeModal('modal-wallet');" class="w-full h-11 rounded-xl bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/40 text-on-surface font-semibold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all">
-          <span class="material-symbols-outlined text-[18px] text-primary">account_balance_wallet</span>
+        <button onclick="showToast('Pas Google Wallet berjaya dijana dan disimpan!'); closeModal('modal-wallet');" class="w-full h-11 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-semibold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all">
+          <span class="material-symbols-outlined text-[18px] text-corp-blue">account_balance_wallet</span>
           <span>Tambah ke Google Wallet</span>
         </button>
       </div>
@@ -957,40 +933,38 @@
 
   <!-- MODAL: IMBAS QR -->
   <div id="modal-scan-qr" class="modal-container hidden fixed inset-0 z-[80] items-center justify-center p-4">
-    <div class="modal-backdrop fixed inset-0 bg-black/85 backdrop-blur-md"></div>
-    <div class="relative w-full max-w-sm bg-surface-container rounded-3xl border border-primary/40 p-6 flex flex-col items-center gap-4 shadow-2xl modal-enter z-10">
-      <button data-close-modal="modal-scan-qr" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+    <div class="modal-backdrop fixed inset-0 bg-slate-900/80 backdrop-blur-md"></div>
+    <div class="relative w-full max-w-sm bg-white rounded-3xl border border-slate-200 p-6 flex flex-col items-center gap-4 shadow-2xl modal-enter z-10">
+      <button data-close-modal="modal-scan-qr" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800">
         <span class="material-symbols-outlined text-[18px]">close</span>
       </button>
 
       <div class="text-center">
-        <h3 class="font-headline-md font-bold text-on-surface">Pengimbas Rasmi PERDASAMA</h3>
-        <p class="text-body-sm text-on-surface-variant text-xs mt-1">Arahkan kamera ke kod QR kad ahli untuk pengesahan segera.</p>
+        <h3 class="font-bold text-slate-900 text-base">Pengimbas Rasmi PERDASAMA</h3>
+        <p class="text-slate-500 text-xs mt-1">Arahkan kamera ke kod QR kad ahli untuk pengesahan segera.</p>
       </div>
 
       <!-- Viewfinder -->
-      <div class="relative w-56 h-56 rounded-2xl border-2 border-primary/60 bg-black/50 overflow-hidden flex items-center justify-center shadow-2xl">
-        <div class="absolute inset-4 border border-dashed border-white/40 rounded-xl"></div>
-        <div id="scan-line" class="absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent animate-pulse" style="top: 40%;"></div>
-        <span class="material-symbols-outlined text-outline-variant text-[64px] opacity-40">qr_code_scanner</span>
+      <div class="relative w-56 h-56 rounded-2xl border-2 border-corp-blue bg-slate-950 overflow-hidden flex items-center justify-center shadow-xl">
+        <div class="absolute inset-4 border border-dashed border-amber-400/60 rounded-xl"></div>
+        <div id="scan-line" class="absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent animate-pulse" style="top: 40%;"></div>
+        <span class="material-symbols-outlined text-slate-700 text-[64px] opacity-40">qr_code_scanner</span>
       </div>
 
       <!-- Scan result simulation -->
-      <div id="scan-result" class="hidden w-full bg-secondary-container/20 border border-secondary/40 p-3 rounded-xl flex items-center gap-3">
-        <div class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
+      <div id="scan-result" class="hidden w-full bg-emerald-50 border border-emerald-300 p-3 rounded-xl flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700">
           <span class="material-symbols-outlined text-[18px]">check</span>
         </div>
         <div class="flex flex-col text-xs">
-          <span class="font-bold text-secondary">Keahlian Disahkan Sah</span>
-          <span class="text-on-surface-variant">Dato' Dr. Megat Azlan (Platinum)</span>
+          <span class="font-bold text-emerald-800">Keahlian Disahkan Sah</span>
+          <span class="text-slate-600">Dato' Dr. Megat Azlan (Platinum Korporat)</span>
         </div>
       </div>
 
-      <p class="text-[11px] text-on-surface-variant text-center">Menyokong kod QR keselamatan berenkripsi PERDASAMA Trust-Pass.</p>
-      
-      <div class="w-full pt-1 border-t border-outline-variant/20 flex justify-center">
-        <button type="button" onclick="closeModal('modal-scan-qr'); openMemberQRModal();" class="text-xs text-tertiary hover:underline font-bold flex items-center gap-1.5 py-1">
-          <span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+      <div class="w-full pt-1 border-t border-slate-200 flex justify-center">
+        <button type="button" onclick="closeModal('modal-scan-qr'); openMemberQRModal();" class="text-xs text-corp-blue hover:underline font-bold flex items-center gap-1.5 py-1">
+          <span class="material-symbols-outlined text-[18px] text-amber-600">qr_code_2</span>
           <span>Tunjuk Kod QR Pas Saya</span>
         </button>
       </div>
@@ -999,42 +973,42 @@
 
   <!-- MODAL: TAMBAH RAKAN NIAGA -->
   <div id="modal-add-partner" class="modal-container hidden fixed inset-0 z-[80] items-center justify-center p-4">
-    <div class="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
-    <div class="relative w-full max-w-sm bg-surface-container rounded-3xl border border-outline-variant/40 p-6 flex flex-col gap-4 shadow-2xl modal-enter z-10">
-      <button data-close-modal="modal-add-partner" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+    <div class="modal-backdrop fixed inset-0 bg-slate-900/70 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-sm bg-white rounded-3xl border border-slate-200 p-6 flex flex-col gap-4 shadow-2xl modal-enter z-10">
+      <button data-close-modal="modal-add-partner" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800">
         <span class="material-symbols-outlined text-[18px]">close</span>
       </button>
 
       <div>
-        <h3 class="font-headline-md font-bold text-on-surface">Tambah Rakan Niaga</h3>
-        <p class="text-body-sm text-on-surface-variant text-xs mt-0.5">Daftarkan rakan kongsi atau ahli lembaga pengarah entiti.</p>
+        <h3 class="font-bold text-slate-900 text-base">Tambah Rakan Niaga</h3>
+        <p class="text-slate-500 text-xs mt-0.5">Daftarkan rakan kongsi atau ahli lembaga pengarah entiti.</p>
       </div>
 
       <form id="form-add-partner" class="flex flex-col gap-3">
         <div>
-          <label class="block text-[11px] font-bold text-on-surface-variant mb-1 uppercase">Nama Penuh</label>
-          <input id="partner-name" required type="text" placeholder="Cth: Prof. Madya Dr. Zulkifli" class="w-full h-10 px-3 rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface text-xs focus:border-tertiary focus:outline-none" />
+          <label class="block text-[11px] font-bold text-slate-700 mb-1 uppercase">Nama Penuh</label>
+          <input id="partner-name" required type="text" placeholder="Cth: Prof. Madya Dr. Zulkifli" class="w-full h-10 px-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs focus:border-corp-blue focus:outline-none" />
         </div>
         <div>
-          <label class="block text-[11px] font-bold text-on-surface-variant mb-1 uppercase">Jawatan / Peranan</label>
-          <input id="partner-role" required type="text" placeholder="Cth: Pengarah Operasi & Rantaian Bekalan" class="w-full h-10 px-3 rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface text-xs focus:border-tertiary focus:outline-none" />
+          <label class="block text-[11px] font-bold text-slate-700 mb-1 uppercase">Jawatan / Peranan</label>
+          <input id="partner-role" required type="text" placeholder="Cth: Pengarah Operasi & Rantaian Bekalan" class="w-full h-10 px-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs focus:border-corp-blue focus:outline-none" />
         </div>
         <div>
-          <label class="block text-[11px] font-bold text-on-surface-variant mb-1 uppercase">Klasifikasi</label>
-          <input id="partner-tag" type="text" placeholder="Cth: Rakan Ekuiti / Pelabur Siri B" class="w-full h-10 px-3 rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface text-xs focus:border-tertiary focus:outline-none" />
+          <label class="block text-[11px] font-bold text-slate-700 mb-1 uppercase">Klasifikasi</label>
+          <input id="partner-tag" type="text" placeholder="Cth: Rakan Ekuiti / Pelabur Seri B" class="w-full h-10 px-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs focus:border-corp-blue focus:outline-none" />
         </div>
         <div class="grid grid-cols-2 gap-2">
           <div>
-            <label class="block text-[11px] font-bold text-on-surface-variant mb-1 uppercase">No Telefon</label>
-            <input id="partner-phone" type="tel" placeholder="+6012..." class="w-full h-10 px-3 rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface text-xs focus:border-tertiary focus:outline-none" />
+            <label class="block text-[11px] font-bold text-slate-700 mb-1 uppercase">No Telefon</label>
+            <input id="partner-phone" type="tel" placeholder="+6012..." class="w-full h-10 px-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs focus:border-corp-blue focus:outline-none" />
           </div>
           <div>
-            <label class="block text-[11px] font-bold text-on-surface-variant mb-1 uppercase">Emel Korporat</label>
-            <input id="partner-email" type="email" placeholder="emel@syarikat.com" class="w-full h-10 px-3 rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface text-xs focus:border-tertiary focus:outline-none" />
+            <label class="block text-[11px] font-bold text-slate-700 mb-1 uppercase">Emel Korporat</label>
+            <input id="partner-email" type="email" placeholder="emel@syarikat.com" class="w-full h-10 px-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs focus:border-corp-blue focus:outline-none" />
           </div>
         </div>
 
-        <button type="submit" class="mt-2 w-full h-11 rounded-xl bg-primary-container hover:bg-blue-600 text-on-primary-container font-bold text-xs flex items-center justify-center gap-1.5 active:scale-98 transition-all shadow-md">
+        <button type="submit" class="mt-2 w-full h-11 rounded-xl bg-gradient-to-r from-corp-navy to-corp-blue text-white font-bold text-xs flex items-center justify-center gap-1.5 active:scale-98 transition-all shadow-md">
           <span class="material-symbols-outlined text-[16px]">person_add</span>
           <span>Daftar Rakan Niaga</span>
         </button>
@@ -1044,32 +1018,32 @@
 
   <!-- MODAL: KONSIERJ VIP & SERVIS -->
   <div id="modal-concierge" class="modal-container hidden fixed inset-0 z-[80] items-center justify-center p-4">
-    <div class="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
-    <div class="relative w-full max-w-sm bg-surface-container rounded-3xl border border-tertiary/40 p-6 flex flex-col gap-4 shadow-2xl modal-enter z-10">
-      <button data-close-modal="modal-concierge" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+    <div class="modal-backdrop fixed inset-0 bg-slate-900/70 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-sm bg-white rounded-3xl border border-slate-200 p-6 flex flex-col gap-4 shadow-2xl modal-enter z-10">
+      <button data-close-modal="modal-concierge" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800">
         <span class="material-symbols-outlined text-[18px]">close</span>
       </button>
 
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-tertiary/20 flex items-center justify-center text-tertiary">
+        <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-700">
           <span class="material-symbols-outlined text-[24px]">support_agent</span>
         </div>
         <div>
-          <h3 id="concierge-modal-title" class="font-headline-md font-bold text-on-surface">Konsierj Eksekutif</h3>
-          <span class="text-[11px] text-secondary font-bold">Layanan Prioriti 24/7 Platinum</span>
+          <h3 id="concierge-modal-title" class="font-bold text-slate-900 text-base">Konsierj Eksekutif</h3>
+          <span class="text-[11px] text-emerald-700 font-bold">Layanan Prioriti 24/7 Platinum</span>
         </div>
       </div>
 
-      <p class="text-body-sm text-on-surface-variant text-xs leading-relaxed">
+      <p class="text-slate-600 text-xs leading-relaxed">
         Sebagai ahli Platinum Korporat, perkhidmatan fasilitasi anda dihubungkan terus ke Pegawai Perhubungan Khas (Liaison Officer) PERDASAMA Kebangsaan.
       </p>
 
       <div class="flex flex-col gap-2">
-        <a href="https://wa.me/60123456789?text=Salam%20PERDASAMA%20Konsierj,%20saya%20Dato%20Dr%20Megat%20Azlan%20memerlukan%20bantuan%20eksekutif." target="_blank" onclick="closeModal('modal-concierge')" class="w-full h-11 rounded-xl bg-secondary-container hover:bg-emerald-600 text-on-secondary font-bold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all">
+        <a href="https://wa.me/60123456789?text=Salam%20PERDASAMA%20Konsierj,%20saya%20Dato%20Dr%20Megat%20Azlan%20memerlukan%20bantuan%20eksekutif." target="_blank" onclick="closeModal('modal-concierge')" class="w-full h-11 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all shadow-md">
           <span class="material-symbols-outlined text-[18px]">chat</span>
           <span>Hubungi Pegawai WhatsApp</span>
         </a>
-        <a href="tel:+60326988888" onclick="closeModal('modal-concierge')" class="w-full h-11 rounded-xl bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/40 text-on-surface font-semibold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all">
+        <a href="tel:+60326988888" onclick="closeModal('modal-concierge')" class="w-full h-11 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-semibold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all">
           <span class="material-symbols-outlined text-[18px]">call</span>
           <span>Talian Meja Bantuan Ibu Pejabat</span>
         </a>
@@ -1079,40 +1053,40 @@
 
   <!-- MODAL: ARKIB AKTIVITI LENGKAP -->
   <div id="modal-archive" class="modal-container hidden fixed inset-0 z-[80] items-center justify-center p-4">
-    <div class="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
-    <div class="relative w-full max-w-sm bg-surface-container rounded-3xl border border-outline-variant/40 p-6 flex flex-col gap-4 shadow-2xl modal-enter z-10 max-h-[85vh] overflow-y-auto">
-      <button data-close-modal="modal-archive" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+    <div class="modal-backdrop fixed inset-0 bg-slate-900/70 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-sm bg-white rounded-3xl border border-slate-200 p-6 flex flex-col gap-4 shadow-2xl modal-enter z-10 max-h-[85vh] overflow-y-auto">
+      <button data-close-modal="modal-archive" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800">
         <span class="material-symbols-outlined text-[18px]">close</span>
       </button>
 
       <div>
-        <h3 class="font-headline-md font-bold text-on-surface">Arkib Aktiviti & Faedah</h3>
-        <p class="text-body-sm text-on-surface-variant text-xs mt-0.5">Rekod lengkap penglibatan dan kelulusan rasmi.</p>
+        <h3 class="font-bold text-slate-900 text-base">Arkib Aktiviti & Faedah</h3>
+        <p class="text-slate-500 text-xs mt-0.5">Rekod lengkap penglibatan dan kelulusan rasmi.</p>
       </div>
 
       <div class="flex flex-col gap-2.5">
-        <div class="p-3 bg-surface-container-low rounded-xl border border-outline-variant/20 flex flex-col gap-1">
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex flex-col gap-1">
           <div class="flex items-center justify-between text-xs">
-            <span class="font-bold text-on-surface">Misi Dagangan Tokyo-Seoul 2024</span>
-            <span class="text-on-surface-variant text-[10px]">15 Ogos 2024</span>
+            <span class="font-bold text-slate-900">Misi Dagangan Tokyo-Seoul 2024</span>
+            <span class="text-slate-400 text-[10px]">15 Ogos 2024</span>
           </div>
-          <p class="text-[11px] text-on-surface-variant">Menandatangani MoA pelaburan bersama konsortium BioKorea bernilai RM 15.0M.</p>
+          <p class="text-[11px] text-slate-600">Menandatangani MoA pelaburan bersama konsortium BioKorea bernilai RM 15.0M.</p>
         </div>
 
-        <div class="p-3 bg-surface-container-low rounded-xl border border-outline-variant/20 flex flex-col gap-1">
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex flex-col gap-1">
           <div class="flex items-center justify-between text-xs">
-            <span class="font-bold text-on-surface">Anugerah Tokoh Usahawan Inovasi</span>
-            <span class="text-on-surface-variant text-[10px]">5 Mei 2024</span>
+            <span class="font-bold text-slate-900">Anugerah Tokoh Usahawan Inovasi</span>
+            <span class="text-slate-400 text-[10px]">5 Mei 2024</span>
           </div>
-          <p class="text-[11px] text-on-surface-variant">Dianugerahkan oleh Perdana Menteri pada Malam Gemilang PERDASAMA Ke-25.</p>
+          <p class="text-[11px] text-slate-600">Dianugerahkan oleh Perdana Menteri pada Malam Gemilang PERDASAMA Ke-25.</p>
         </div>
 
-        <div class="p-3 bg-surface-container-low rounded-xl border border-outline-variant/20 flex flex-col gap-1">
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex flex-col gap-1">
           <div class="flex items-center justify-between text-xs">
-            <span class="font-bold text-on-surface">Pendaftaran Ahli Seumur Hidup</span>
-            <span class="text-on-surface-variant text-[10px]">12 Mac 2018</span>
+            <span class="font-bold text-slate-900">Pendaftaran Ahli Seumur Hidup</span>
+            <span class="text-slate-400 text-[10px]">12 Mac 2018</span>
           </div>
-          <p class="text-[11px] text-on-surface-variant">Pengesahan keahlian tetap di bawah Dewan Usahawan Melayu Malaysia.</p>
+          <p class="text-[11px] text-slate-600">Pengesahan keahlian tetap di bawah Dewan Usahawan Melayu Malaysia.</p>
         </div>
       </div>
     </div>

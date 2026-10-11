@@ -111,6 +111,22 @@ function openMemberQRModal() {
   openModal('modal-qr-code');
 }
 
+function toggleCardFlip(e) {
+  if (e && e.target && (e.target.id === 'card-mini-qr' || e.target.closest('#card-mini-qr'))) {
+    openMemberQRModal();
+    return;
+  }
+  const card = document.getElementById('virtual-credit-card');
+  const hint = document.getElementById('flip-hint-text');
+  if (card) {
+    card.classList.toggle('flipped');
+    const isFlipped = card.classList.contains('flipped');
+    if (hint) {
+      hint.textContent = isFlipped ? 'Muka Depan (Front)' : 'Pusingkan Kad (Flip)';
+    }
+  }
+}
+
 function downloadQRCodePng() {
   if (!currentQRDataUrl) {
     showToast('Kod QR belum sedia untuk dimuat turun', 'error');
