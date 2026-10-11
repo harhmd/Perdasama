@@ -18,8 +18,8 @@ function showToast(message, type = 'success') {
   toast.id = 'toast-notification';
   toast.className = `fixed top-20 left-1/2 -translate-x-1/2 z-[100] px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 text-xs font-semibold backdrop-blur-md border toast-slide ${
     type === 'success' 
-      ? 'bg-secondary-container/90 text-on-secondary-container border-secondary/40' 
-      : 'bg-surface-container-high/90 text-on-surface border-outline-variant/40'
+      ? 'bg-blue-900 text-amber-300 border-amber-400/60' 
+      : 'bg-slate-900 text-white border-slate-700'
   }`;
   
   const icon = type === 'success' ? 'check_circle' : 'info';
@@ -39,6 +39,7 @@ function showToast(message, type = 'success') {
 // ==========================================
 let currentQRDataUrl = "";
 let currentVerificationUrl = "";
+let whatsappDirectUrl = "https://wa.me/60175050057?text=Salam%20Ts%20Hj%20Nor%20Azhar,%20saya%20menghubungi%20melalui%20Kad%20Digital%20PERDASAMA";
 
 function generateQrDataUrl(text, cellSize = 6) {
   if (typeof qrcode === 'function') {
@@ -61,10 +62,12 @@ function initQRCodes() {
     ? window.location.origin
     : 'http://65.75.201.219:3000';
   
-  currentVerificationUrl = `${origin}/#PDS-MY-2025-0849`;
-  currentQRDataUrl = generateQrDataUrl(currentVerificationUrl, 6);
+  currentVerificationUrl = `${origin}/#PDS-HQ-1998-0057`;
+  
+  // Use WhatsApp link for direct card scan as featured on the business card
+  currentQRDataUrl = generateQrDataUrl(whatsappDirectUrl, 6);
 
-  // 1. Mini QR in Metallic Card
+  // 1. Mini QR in Virtual Credit Card (Back)
   const miniQrEl = document.getElementById('card-mini-qr');
   if (miniQrEl) {
     miniQrEl.src = currentQRDataUrl;
@@ -85,15 +88,15 @@ function initQRCodes() {
   // 4. Verification link display text
   const urlDisplay = document.getElementById('qr-verified-url');
   if (urlDisplay) {
-    urlDisplay.textContent = currentVerificationUrl;
+    urlDisplay.textContent = "wa.me/60175050057 (WhatsApp Rasmi)";
   }
 
   // 5. Wire copy button inside QR Modal
   const btnCopyQrUrl = document.getElementById('btn-copy-qr-url');
   if (btnCopyQrUrl) {
     btnCopyQrUrl.addEventListener('click', () => {
-      navigator.clipboard?.writeText(currentVerificationUrl).then(() => {
-        showToast('Pautan rasmi disalin ke papan klip!');
+      navigator.clipboard?.writeText(whatsappDirectUrl).then(() => {
+        showToast('Pautan WhatsApp Ts. Hj Nor Azhar disalin!');
       }).catch(() => {
         showToast('Pautan berjaya disalin');
       });
@@ -138,49 +141,53 @@ function downloadQRCodePng() {
   const img = new Image();
 
   img.onload = () => {
-    canvas.width = 400;
-    canvas.height = 480;
+    canvas.width = 420;
+    canvas.height = 510;
 
     // Background
-    ctx.fillStyle = '#0f131d';
+    ctx.fillStyle = '#071c3d';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // Header badge
-    ctx.fillStyle = '#ffb95f';
-    ctx.font = 'bold 15px Plus Jakarta Sans, sans-serif';
+    ctx.fillStyle = '#f59e0b';
+    ctx.font = 'bold 16px Plus Jakarta Sans, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('PERDASAMA KEBANGSAAN', 200, 38);
+    ctx.fillText('27 TAHUN PERDASAMA (1998 - 2025)', 210, 38);
 
-    ctx.fillStyle = '#9ca3af';
+    ctx.fillStyle = '#cbd5e1';
     ctx.font = '11px Inter, sans-serif';
-    ctx.fillText('Dewan Usahawan Melayu Malaysia', 200, 56);
+    ctx.fillText('Dewan Usahawan Melayu Malaysia • Mengorak Langkah', 210, 58);
 
     // White card background for QR
     ctx.fillStyle = '#ffffff';
-    ctx.roundRect ? ctx.roundRect(40, 75, 320, 320, 16) : ctx.fillRect(40, 75, 320, 320);
+    ctx.roundRect ? ctx.roundRect(45, 78, 330, 330, 16) : ctx.fillRect(45, 78, 330, 330);
     ctx.fill();
 
     // Draw QR image
-    ctx.drawImage(img, 55, 90, 290, 290);
+    ctx.drawImage(img, 60, 93, 300, 300);
 
     // Member Info footer
-    ctx.fillStyle = '#dfe2f1';
+    ctx.fillStyle = '#ffffff';
     ctx.font = 'bold 13px Inter, sans-serif';
-    ctx.fillText("Dato' Dr. Megat Azlan bin Megat Tariq", 200, 425);
+    ctx.fillText("TS. HJ NOR AZHAR BIN ABDUL HAMID", 210, 440);
 
-    ctx.fillStyle = '#4edea3';
-    ctx.font = 'bold 12px monospace';
-    ctx.fillText('#PDS-MY-2025-0849 • PLATINUM KORPORAT', 200, 448);
+    ctx.fillStyle = '#f59e0b';
+    ctx.font = 'bold 11px Inter, sans-serif';
+    ctx.fillText("(MBA) (HE) (BCM) • Ahli Lembaga Penasihat", 210, 460);
+
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '10px monospace';
+    ctx.fillText("+6017-5050057 • azhabdhamid@gmail.com", 210, 480);
 
     // Trigger download
     const link = document.createElement('a');
-    link.download = 'PERDASAMA_QR_PDS-MY-2025-0849.png';
+    link.download = 'PERDASAMA_QR_TS_HJ_NOR_AZHAR.png';
     link.href = canvas.toDataURL('image/png');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
-    showToast('Gambar Kod QR PNG berjaya dimuat turun!');
+    showToast('Gambar Kod QR WhatsApp berjaya dimuat turun!');
   };
 
   img.src = currentQRDataUrl;
@@ -188,7 +195,7 @@ function downloadQRCodePng() {
 
 function shareViaWhatsApp() {
   const text = encodeURIComponent(
-    `Salam, berikut adalah Kad Pengesahan Digital PERDASAMA rasmi bagi Dato' Dr. Megat Azlan bin Megat Tariq (#PDS-MY-2025-0849 - Platinum Korporat):\n${currentVerificationUrl}`
+    `Salam, berikut adalah Kad Pengesahan Digital PERDASAMA (27 Tahun: 1998 - 2025) bagi Ts. Hj Nor Azhar Bin Abdul Hamid (MBA) (HE) (BCM) - Ahli Lembaga Penasihat PERDASAMA Kebangsaan:\n${window.location.origin || 'http://65.75.201.219:3000'}/#PDS-HQ-1998-0057\nHubungi: +6017-5050057`
   );
   window.open(`https://wa.me/?text=${text}`, '_blank');
 }
@@ -213,13 +220,13 @@ function initTabs() {
 
       // Update Nav state
       navLinks.forEach(nl => {
-        nl.classList.remove('text-tertiary', 'font-bold');
-        nl.classList.add('text-on-surface-variant');
+        nl.classList.remove('text-corp-blue', 'font-bold');
+        nl.classList.add('text-slate-400');
         nl.removeAttribute('aria-current');
       });
 
-      link.classList.remove('text-on-surface-variant');
-      link.classList.add('text-tertiary', 'font-bold');
+      link.classList.remove('text-slate-400');
+      link.classList.add('text-corp-blue', 'font-bold');
       link.setAttribute('aria-current', 'page');
 
       // Update Tab Pane visibility
@@ -311,7 +318,7 @@ function initModals() {
   const serviceCards = document.querySelectorAll('.service-card-btn');
   serviceCards.forEach(card => {
     card.addEventListener('click', () => {
-      const serviceName = card.querySelector('span.block.text-label-md')?.textContent || 'Perkhidmatan';
+      const serviceName = card.querySelector('span.block.text-xs')?.textContent || 'Perkhidmatan';
       const modalTitle = document.getElementById('concierge-modal-title');
       if (modalTitle) modalTitle.textContent = serviceName;
       openModal('modal-concierge');
@@ -354,23 +361,30 @@ function initShareActions() {
     btnDownloadVcard.addEventListener('click', () => {
       const vcardData = `BEGIN:VCARD
 VERSION:3.0
-FN:Dato' Dr. Megat Azlan bin Megat Tariq
-ORG:Apex BioVentures Group Sdn Bhd;PERDASAMA Kebangsaan
-TITLE:Pengasas & Pengarah Urusan
-TEL;TYPE=CELL,VOICE:+60128889922
-EMAIL:megat.azlan@apexbio.com.my
-URL:${currentVerificationUrl || 'https://perdasama.org.my'}
-NOTE:Ahli Seumur Hidup PERDASAMA | Platinum Korporat #PDS-MY-2025-0849
+N:Abdul Hamid;Nor Azhar;;Ts. Hj;MBA HE BCM
+FN:Ts. Hj Nor Azhar Bin Abdul Hamid (MBA) (HE) (BCM)
+ORG:PERDASAMA Kebangsaan;Dewan Usahawan Melayu Malaysia
+TITLE:Ahli Lembaga Penasihat
+TEL;TYPE=CELL,VOICE,PREF:+60175050057
+TEL;TYPE=WORK,VOICE:+60327796292
+TEL;TYPE=WORK,FAX:+60327796200
+EMAIL;TYPE=INTERNET,PREF:azhabdhamid@gmail.com
+ADR;TYPE=WORK:;;Level 7, Menara Arina Uniti, Jalan Raja Muda Abdul Aziz;Kuala Lumpur;;50300;Malaysia
+URL:https://www.perdasamanasional.org
+X-SOCIALPROFILE;TYPE=instagram:https://instagram.com/perdasamanasional
+X-SOCIALPROFILE;TYPE=facebook:https://facebook.com/perdasamanasional
+X-SOCIALPROFILE;TYPE=youtube:https://youtube.com/@Perdasamanasionaltv
+NOTE:27 TAHUN (1998 - 2025) PERDASAMA Mengorak Langkah | Ahli Lembaga Penasihat #PDS-HQ-1998-0057
 END:VCARD`;
 
       const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
-      link.download = "Dato_Dr_Megat_Azlan_PERDASAMA.vcf";
+      link.download = "Ts_Hj_Nor_Azhar_PERDASAMA.vcf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      showToast('Kad kenalan vCard (.vcf) dimuat turun!');
+      showToast('Kad kenalan rasmi Ts. Hj Nor Azhar (.vcf) dimuat turun!');
     });
   }
 
@@ -439,26 +453,26 @@ function appendPartnerToUI(partner) {
   if (!container) return;
 
   const card = document.createElement('div');
-  card.className = "bg-surface-container rounded-xl p-3 flex items-center justify-between gap-space-sm border border-outline-variant/30";
+  card.className = "luxury-white-card rounded-xl p-3 flex items-center justify-between gap-3";
   card.innerHTML = `
     <div class="flex items-center gap-3 min-w-0">
       <div class="relative flex-shrink-0">
-        <img alt="${partner.name}" class="w-11 h-11 rounded-full object-cover ring-2 ring-primary/30" src="${partner.avatar}"/>
-        <span class="absolute bottom-0 right-0 w-3 h-3 bg-secondary rounded-full ring-2 ring-surface"></span>
+        <img alt="${partner.name}" class="w-11 h-11 rounded-full object-cover ring-2 ring-blue-300" src="${partner.avatar}"/>
+        <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 rounded-full ring-2 ring-white"></span>
       </div>
       <div class="flex flex-col min-w-0">
-        <span class="font-label-lg text-label-lg text-on-surface font-bold truncate">${partner.name}</span>
-        <span class="text-on-surface-variant font-body-sm text-[12px] truncate">${partner.role}</span>
+        <span class="text-xs font-bold text-slate-900 truncate">${partner.name}</span>
+        <span class="text-slate-500 text-[11px] truncate">${partner.role}</span>
         <div class="flex items-center gap-1.5 mt-1">
-          <span class="bg-primary/15 text-primary px-1.5 py-0.2 rounded text-[10px] font-bold">${partner.tags[0] || 'Rakan'}</span>
+          <span class="bg-blue-100 text-corp-blue px-1.5 py-0.2 rounded text-[10px] font-bold">${partner.tags[0] || 'Rakan'}</span>
         </div>
       </div>
     </div>
     <div class="flex items-center gap-1.5 flex-shrink-0">
-      <a href="tel:${partner.phone || ''}" aria-label="Hubungi ${partner.name}" class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-95 transition-all border border-outline-variant/30">
+      <a href="tel:${partner.phone || ''}" aria-label="Hubungi ${partner.name}" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-blue-50 flex items-center justify-center text-slate-600 hover:text-corp-blue active:scale-95 transition-all border border-slate-200">
         <span class="material-symbols-outlined" style="font-size: 18px;">call</span>
       </a>
-      <a href="mailto:${partner.email || ''}" aria-label="Emel ${partner.name}" class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-95 transition-all border border-outline-variant/30">
+      <a href="mailto:${partner.email || ''}" aria-label="Emel ${partner.name}" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-blue-50 flex items-center justify-center text-slate-600 hover:text-corp-blue active:scale-95 transition-all border border-slate-200">
         <span class="material-symbols-outlined" style="font-size: 18px;">mail</span>
       </a>
     </div>
@@ -481,7 +495,7 @@ function initDirectorySearch() {
 
   function filterDirectory() {
     const query = (searchInput?.value || '').toLowerCase().trim();
-    const activeBtn = document.querySelector('[data-cluster-filter].bg-primary-container');
+    const activeBtn = document.querySelector('[data-cluster-filter].bg-corp-blue');
     const selectedCluster = activeBtn ? activeBtn.getAttribute('data-cluster-filter') : 'all';
 
     items.forEach(item => {
@@ -506,11 +520,11 @@ function initDirectorySearch() {
   clusterFilters.forEach(btn => {
     btn.addEventListener('click', () => {
       clusterFilters.forEach(b => {
-        b.classList.remove('bg-primary-container', 'text-on-primary-container');
-        b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        b.classList.remove('bg-corp-blue', 'text-white');
+        b.classList.add('bg-white', 'text-slate-600');
       });
-      btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
-      btn.classList.add('bg-primary-container', 'text-on-primary-container');
+      btn.classList.remove('bg-white', 'text-slate-600');
+      btn.classList.add('bg-corp-blue', 'text-white');
       filterDirectory();
     });
   });
@@ -523,13 +537,13 @@ function initAgendaActions() {
     btn.addEventListener('click', () => {
       const title = btn.getAttribute('data-event-title') || 'Acara';
       if (btn.classList.contains('attending')) {
-        btn.classList.remove('attending', 'bg-secondary', 'text-on-secondary');
-        btn.classList.add('bg-surface-container-high', 'text-on-surface');
+        btn.classList.remove('attending', 'bg-emerald-600', 'text-white');
+        btn.classList.add('bg-slate-100', 'text-slate-800');
         btn.innerHTML = `<span class="material-symbols-outlined text-[16px]">how_to_reg</span> RSVP Hadir`;
         showToast(`Pembatalan kehadiran untuk "${title}"`);
       } else {
-        btn.classList.add('attending', 'bg-secondary', 'text-on-secondary');
-        btn.classList.remove('bg-surface-container-high', 'text-on-surface');
+        btn.classList.add('attending', 'bg-emerald-600', 'text-white');
+        btn.classList.remove('bg-slate-100', 'text-slate-800');
         btn.innerHTML = `<span class="material-symbols-outlined text-[16px]">check_circle</span> Disahkan Hadir`;
         showToast(`Kehadiran anda ke "${title}" telah disahkan!`);
       }

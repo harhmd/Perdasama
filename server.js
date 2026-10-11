@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static assets from public
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Mock In-Memory Database for Partners
+// Mock In-Memory Database for Partners & Board
 let partners = [
   {
     id: 1,
@@ -36,6 +36,19 @@ let partners = [
 
 // Directory of Corporate Members
 const directory = [
+  {
+    id: "PDS-HQ-1998-0057",
+    name: "Ts. Hj Nor Azhar Bin Abdul Hamid",
+    credentials: "(MBA) (HE) (BCM)",
+    company: "Ibu Pejabat PERDASAMA Kebangsaan",
+    role: "Ahli Lembaga Penasihat",
+    tier: "Lembaga Penasihat",
+    cluster: "Kepimpinan Korporat & Digital",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+    status: "Aktif",
+    revenue: "27 Tahun (1998 - 2025)",
+    location: "Kuala Lumpur"
+  },
   {
     id: "PDS-MY-2025-0849",
     name: "Dato' Dr. Megat Azlan bin Megat Tariq",
@@ -68,28 +81,6 @@ const directory = [
     status: "Aktif",
     revenue: "RM 48.5M",
     location: "Johor Bahru, Johor"
-  },
-  {
-    id: "PDS-MY-2024-0671",
-    name: "Dato' Kamarulzaman Hashim",
-    company: "SiberNetica Solutions Malaysia",
-    tier: "Emas Korporat",
-    cluster: "Teknologi & Keselamatan Siber",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
-    status: "Aktif",
-    revenue: "RM 32.0M",
-    location: "Cyberjaya"
-  },
-  {
-    id: "PDS-MY-2025-1102",
-    name: "Dr. Nurul Ain Binti Razak",
-    company: "Medika Diagnostics Nusantara",
-    tier: "Perak Korporat",
-    cluster: "Peranti Perubatan",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
-    status: "Aktif",
-    revenue: "RM 18.2M",
-    location: "Pulau Pinang"
   }
 ];
 
@@ -97,6 +88,17 @@ const directory = [
 const agenda = [
   {
     id: 1,
+    title: "Sambutan 27 Tahun PERDASAMA (1998 - 2025)",
+    date: "12 - 14 Feb 2025",
+    time: "09:00 PG - 05:00 PTG",
+    location: "Pusat Dagangan Dunia (WTC) Kuala Lumpur",
+    organizer: "Majlis Tertinggi & Lembaga Penasihat PERDASAMA",
+    badge: "Jubli Ke-27",
+    status: "Disahkan",
+    desc: "Meraikan 27 tahun PERDASAMA Mengorak Langkah memacu ekonomi usahawan Melayu Malaysia dengan ucaptama kepimpinan tertinggi."
+  },
+  {
+    id: 2,
     title: "Misi Dagangan & Pelaburan Davos 2025",
     date: "18 - 23 Jan 2025",
     time: "Sepanjang Hari",
@@ -107,37 +109,15 @@ const agenda = [
     desc: "Forum Ekonomi Dunia membabitkan perbincangan pelaburan terus asing (FDI) bagi sektor bioteknologi tinggi dan AI."
   },
   {
-    id: 2,
+    id: 3,
     title: "Sesi Padanan Perniagaan (B2B) GLC & Swasta",
-    date: "5 Feb 2025",
+    date: "5 Mac 2025",
     time: "09:00 PG - 04:30 PTG",
-    location: "Grand Hyatt Kuala Lumpur",
+    location: "Menara Arina Uniti & Grand Hyatt KL",
     organizer: "Biro Pelaburan PERDASAMA Kebangsaan",
     badge: "Eksklusif",
     status: "Terbuka",
-    desc: "Peluang pembekalan dan vendor strategik bersama Khazanah, PNB, dan syarikat berkaitan kerajaan."
-  },
-  {
-    id: 3,
-    title: "Mesyuarat Agung Tahunan (AGM) PERDASAMA Ke-26",
-    date: "14 Mac 2025",
-    time: "08:30 PG - 01:00 PTG",
-    location: "Pusat Dagangan Dunia (WTC) KL",
-    organizer: "Majlis Tertinggi PERDASAMA",
-    badge: "Rasmi",
-    status: "Wajib Hadir",
-    desc: "Pembentangan laporan tahunan, pelan induk pendigitalan usahawan Bumiputera 2030, dan pemilihan biro."
-  },
-  {
-    id: 4,
-    title: "Sidang Kemuncak Inovasi Bioteknologi ASEAN",
-    date: "28 April 2025",
-    time: "10:00 PG - 05:00 PTG",
-    location: "Suntec Singapore Convention Centre",
-    organizer: "ASEAN Business Advisory Council",
-    badge: "Serantau",
-    status: "Jemputan Khas",
-    desc: "Ucaptama Dato' Dr. Megat Azlan berkenaan komersialisasi genomik AI merentas sempadan ASEAN."
+    desc: "Peluang pembekalan dan vendor strategik bersama GLC dan agensi peneraju pelaburan kebangsaan."
   }
 ];
 
@@ -153,26 +133,42 @@ app.get('/api/health', (req, res) => {
 
 app.get('/api/profile', (req, res) => {
   res.json({
-    membershipId: "#PDS-MY-2025-0849",
-    name: "Dato' Dr. Megat Azlan bin Megat Tariq",
-    company: "Apex BioVentures Group Sdn Bhd",
-    tier: "Platinum Korporat",
+    membershipId: "#PDS-HQ-1998-0057",
+    cardNumber: "2798 1998 2025 0057",
+    name: "Ts. Hj Nor Azhar Bin Abdul Hamid",
+    credentials: "(MBA) (HE) (BCM)",
+    role: "Ahli Lembaga Penasihat",
+    organization: "PERDASAMA Kebangsaan (Dewan Usahawan Melayu Malaysia)",
+    anniversary: "27 Tahun (1998 - 2025) Mengorak Langkah",
+    tier: "Lembaga Penasihat Kebangsaan",
     status: "Ahli Seumur Hidup",
-    registeredDate: "12 Mac 2018",
+    registeredDate: "1998",
     expiryDate: "Seumur Hidup",
-    nfcStatus: "Diaktifkan",
+    phone: "+6017-5050057",
+    officeTel: "03-27796292",
+    officeFax: "03-2779 6200",
+    email: "azhabdhamid@gmail.com",
+    address: {
+      line1: "Ibu Pejabat PERDASAMA",
+      line2: "Level 7, Menara Arina Uniti,",
+      line3: "Jalan Raja Muda Abdul Aziz, 50300 Kuala Lumpur."
+    },
+    website: "www.perdasamanasional.org",
+    social: {
+      instagram: "perdasamanasional",
+      facebook: "Perdasama Nasional",
+      youtube: "@Perdasamanasionaltv"
+    },
     dossier: {
-      statusRound: "Aktif • Seri B",
-      tags: ["Bioteknologi & AI", "Kluster Inovasi Nasional", "Eksport Serantau"],
+      statusRound: "Kepimpinan Tertinggi • 27 Tahun",
+      tags: ["Ahli Lembaga Penasihat", "Advokasi Korporat", "Ekosistem Usahawan Melayu"],
       metrics: {
-        annualRevenue: "RM 85.0M",
-        revenueYoY: "+34% YoY",
-        workforce: "240 Staf",
-        workforceType: "Pekerja Tempatan",
-        networkScore: 98,
-        networkLevel: "Super Connector"
+        experience: "27 Tahun",
+        roleLevel: "Penasihat Kebangsaan",
+        networkScore: 99,
+        networkLevel: "Peneraju Utama"
       },
-      summary: "Dato' Dr. Megat Azlan memimpin pengkomersialan diagnostik genomik dan automasi bionik berasaskan kecerdasan buatan (AI) di rantau ASEAN, berkhidmat sebagai Pengerusi Kluster Inovasi Kesihatan Perdasama."
+      summary: "Ts. Hj Nor Azhar Bin Abdul Hamid (MBA) (HE) (BCM) berkhidmat sebagai Ahli Lembaga Penasihat PERDASAMA Kebangsaan di Ibu Pejabat Menara Arina Uniti Kuala Lumpur, menyumbang kepakaran kepimpinan dan jaringan strategik dalam memacu agenda 'Mengorak Langkah' 27 Tahun PERDASAMA (1998 - 2025)."
     }
   });
 });
