@@ -433,8 +433,9 @@
                 <span class="block text-[10px] font-label-sm text-on-surface-variant uppercase">Pelepasan NFC</span>
                 <span class="block text-[11px] font-semibold text-secondary">Diaktifkan</span>
               </div>
-              <div onclick="openModal('modal-share-card')" class="w-11 h-11 bg-white rounded-lg p-1 flex items-center justify-center flex-shrink-0 cursor-pointer shadow-md hover:scale-105 transition-transform">
-                <span class="material-symbols-outlined text-surface-container-lowest font-bold" style="font-size: 28px;">qr_code_2</span>
+              <div id="card-qr-box" onclick="openMemberQRModal()" title="Ketik untuk besarkan Kod QR rasmi" class="w-12 h-12 bg-white rounded-xl p-1 flex items-center justify-center flex-shrink-0 cursor-pointer shadow-lg hover:scale-105 active:scale-95 transition-transform group relative border border-tertiary/40">
+                <img id="card-mini-qr" alt="Kod QR Keahlian" class="w-full h-full object-contain rounded" />
+                <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface animate-pulse"></span>
               </div>
             </div>
           </div>
@@ -825,6 +826,59 @@
   <!-- MODALS CONTAINER                               -->
   <!-- ============================================== -->
 
+  <!-- MODAL: KOD QR KEAHLIAN RASMI (PAS KORPORAT) -->
+  <div id="modal-qr-code" class="modal-container hidden fixed inset-0 z-[85] items-center justify-center p-4">
+    <div class="modal-backdrop fixed inset-0 bg-black/85 backdrop-blur-md"></div>
+    <div class="relative w-full max-w-sm bg-surface-container rounded-3xl border border-tertiary/40 p-6 flex flex-col items-center gap-4 shadow-2xl modal-enter z-10">
+      <button data-close-modal="modal-qr-code" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center border border-tertiary/40">
+          <span class="material-symbols-outlined text-tertiary text-[18px]">qr_code_2</span>
+        </div>
+        <div class="text-left">
+          <span class="block text-[10px] font-extrabold uppercase tracking-widest text-tertiary">PENGESAHAN RASMI</span>
+          <h3 class="font-headline-sm font-bold text-on-surface text-sm">Kod QR Ahli Korporat</h3>
+        </div>
+      </div>
+
+      <!-- Real Scannable High-Res QR Box -->
+      <div class="bg-white p-3.5 rounded-2xl shadow-2xl flex flex-col items-center border-2 border-tertiary/40 w-full max-w-[260px]">
+        <img id="modal-qr-code-img" alt="Kod QR Rasmi PERDASAMA" class="w-56 h-56 object-contain" />
+        <div class="mt-2 text-center w-full">
+          <span class="block text-[12px] font-mono font-bold text-neutral-900 tracking-wider">#PDS-MY-2025-0849</span>
+          <div class="flex items-center justify-center gap-1 text-[9px] font-bold text-emerald-700 uppercase tracking-wider mt-0.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+            <span>PERDASAMA VERIFIED PASS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full bg-surface-container-low p-2.5 rounded-xl border border-outline-variant/30 flex items-center justify-between gap-2">
+        <div class="flex flex-col min-w-0">
+          <span class="text-[9px] uppercase tracking-wider text-on-surface-variant font-bold">Pautan Pengesahan</span>
+          <span id="qr-verified-url" class="text-[11px] font-mono text-tertiary truncate">http://65.75.201.219:3000/#PDS-MY-2025-0849</span>
+        </div>
+        <button id="btn-copy-qr-url" class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-primary transition-colors flex-shrink-0" title="Salin Pautan">
+          <span class="material-symbols-outlined text-[16px]">content_copy</span>
+        </button>
+      </div>
+
+      <div class="w-full flex flex-col gap-2">
+        <button id="btn-download-qr-png" class="w-full h-11 rounded-xl bg-gradient-to-r from-secondary-container to-secondary text-on-secondary font-bold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all shadow-md">
+          <span class="material-symbols-outlined text-[18px]">download</span>
+          <span>Muat Turun Gambar QR (PNG)</span>
+        </button>
+        <button onclick="shareViaWhatsApp()" class="w-full h-10 rounded-xl bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/40 text-on-surface font-semibold text-xs flex items-center justify-center gap-2 active:scale-98 transition-all">
+          <span class="material-symbols-outlined text-[16px] text-secondary">share</span>
+          <span>Kongsi Melalui WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL: KONGSI KAD DIGITAL / PELEPASAN NFC -->
   <div id="modal-share-card" class="modal-container hidden fixed inset-0 z-[80] items-center justify-center p-4">
     <div class="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
@@ -843,38 +897,9 @@
       </div>
 
       <!-- Live QR Code Card -->
-      <div class="bg-white p-4 rounded-2xl shadow-inner flex flex-col items-center">
-        <svg class="w-44 h-44 text-surface-container-lowest" viewBox="0 0 120 120" fill="currentColor">
-          <!-- Stylized QR pattern -->
-          <rect x="10" y="10" width="30" height="30" rx="4" fill="#0f131d"/>
-          <rect x="16" y="16" width="18" height="18" fill="#ffffff"/>
-          <rect x="20" y="20" width="10" height="10" rx="2" fill="#0f131d"/>
-
-          <rect x="80" y="10" width="30" height="30" rx="4" fill="#0f131d"/>
-          <rect x="86" y="16" width="18" height="18" fill="#ffffff"/>
-          <rect x="90" y="20" width="10" height="10" rx="2" fill="#0f131d"/>
-
-          <rect x="10" y="80" width="30" height="30" rx="4" fill="#0f131d"/>
-          <rect x="16" y="86" width="18" height="18" fill="#ffffff"/>
-          <rect x="20" y="90" width="10" height="10" rx="2" fill="#0f131d"/>
-
-          <!-- Data blocks -->
-          <rect x="48" y="14" width="8" height="8" rx="1" fill="#0f131d"/>
-          <rect x="62" y="14" width="8" height="8" rx="1" fill="#0f131d"/>
-          <rect x="48" y="28" width="8" height="8" rx="1" fill="#0f131d"/>
-          <rect x="62" y="28" width="8" height="8" rx="1" fill="#0f131d"/>
-          <rect x="48" y="44" width="24" height="24" rx="3" fill="#2563eb"/>
-          <circle cx="60" cy="56" r="6" fill="#ffffff"/>
-          <rect x="16" y="48" width="8" height="8" rx="1" fill="#0f131d"/>
-          <rect x="28" y="56" width="8" height="8" rx="1" fill="#0f131d"/>
-          <rect x="84" y="48" width="8" height="8" rx="1" fill="#0f131d"/>
-          <rect x="96" y="56" width="8" height="8" rx="1" fill="#0f131d"/>
-          <rect x="48" y="80" width="8" height="16" rx="1" fill="#0f131d"/>
-          <rect x="62" y="88" width="16" height="8" rx="1" fill="#0f131d"/>
-          <rect x="84" y="80" width="12" height="12" rx="1" fill="#0f131d"/>
-          <rect x="100" y="96" width="10" height="10" rx="1" fill="#0f131d"/>
-        </svg>
-        <span class="text-[11px] font-mono font-bold text-surface-container-highest mt-1">#PDS-MY-2025-0849</span>
+      <div class="bg-white p-4 rounded-2xl shadow-xl flex flex-col items-center border border-neutral-200">
+        <img id="share-modal-qr-img" alt="Kod QR Pelepasan Rasmi" class="w-48 h-48 object-contain" />
+        <span class="text-[11px] font-mono font-bold text-surface-container-highest mt-2 tracking-wider">#PDS-MY-2025-0849</span>
       </div>
 
       <!-- Action buttons -->
@@ -962,6 +987,13 @@
       </div>
 
       <p class="text-[11px] text-on-surface-variant text-center">Menyokong kod QR keselamatan berenkripsi PERDASAMA Trust-Pass.</p>
+      
+      <div class="w-full pt-1 border-t border-outline-variant/20 flex justify-center">
+        <button type="button" onclick="closeModal('modal-scan-qr'); openMemberQRModal();" class="text-xs text-tertiary hover:underline font-bold flex items-center gap-1.5 py-1">
+          <span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+          <span>Tunjuk Kod QR Pas Saya</span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -1086,6 +1118,7 @@
     </div>
   </div>
 
+  <script src="/js/qrcode.min.js"></script>
   <script src="/js/app.js"></script>
 </body>
 </html>

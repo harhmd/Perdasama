@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAgendaActions();
   initPartnerForm();
   initShareActions();
+  initQRCodes();
 });
 
 // Toast notification helper
@@ -31,6 +32,149 @@ function showToast(message, type = 'success') {
     toast.style.transform = 'translate(-50%, -10px)';
     setTimeout(() => toast.remove(), 300);
   }, 2600);
+}
+
+// ==========================================
+// REAL SCANNABLE QR CODE ENGINE
+// ==========================================
+let currentQRDataUrl = "";
+let currentVerificationUrl = "";
+
+function generateQrDataUrl(text, cellSize = 6) {
+  if (typeof qrcode === 'function') {
+    try {
+      const qr = qrcode(0, 'M');
+      qr.addData(text);
+      qr.make();
+      return qr.createDataURL(cellSize, 2);
+    } catch (e) {
+      console.warn("Local qrcode generator error:", e);
+    }
+  }
+  // Online fallback if offline engine fails
+  return `https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=2&data=${encodeURIComponent(text)}`;
+}
+
+function initQRCodes() {
+  // Determine canonical verification URL
+  const origin = (window.location.origin && window.location.origin !== 'null' && window.location.origin !== 'file://')
+    ? window.location.origin
+    : 'http://65.75.201.219:3000';
+  
+  currentVerificationUrl = `${origin}/#PDS-MY-2025-0849`;
+  currentQRDataUrl = generateQrDataUrl(currentVerificationUrl, 6);
+
+  // 1. Mini QR in Metallic Card
+  const miniQrEl = document.getElementById('card-mini-qr');
+  if (miniQrEl) {
+    miniQrEl.src = currentQRDataUrl;
+  }
+
+  // 2. Large QR in Official Member QR Modal
+  const modalQrEl = document.getElementById('modal-qr-code-img');
+  if (modalQrEl) {
+    modalQrEl.src = currentQRDataUrl;
+  }
+
+  // 3. QR in Share Modal
+  const shareQrEl = document.getElementById('share-modal-qr-img');
+  if (shareQrEl) {
+    shareQrEl.src = currentQRDataUrl;
+  }
+
+  // 4. Verification link display text
+  const urlDisplay = document.getElementById('qr-verified-url');
+  if (urlDisplay) {
+    urlDisplay.textContent = currentVerificationUrl;
+  }
+
+  // 5. Wire copy button inside QR Modal
+  const btnCopyQrUrl = document.getElementById('btn-copy-qr-url');
+  if (btnCopyQrUrl) {
+    btnCopyQrUrl.addEventListener('click', () => {
+      navigator.clipboard?.writeText(currentVerificationUrl).then(() => {
+        showToast('Pautan rasmi disalin ke papan klip!');
+      }).catch(() => {
+        showToast('Pautan berjaya disalin');
+      });
+    });
+  }
+
+  // 6. Wire download PNG button
+  const btnDownloadQr = document.getElementById('btn-download-qr-png');
+  if (btnDownloadQr) {
+    btnDownloadQr.addEventListener('click', downloadQRCodePng);
+  }
+}
+
+function openMemberQRModal() {
+  openModal('modal-qr-code');
+}
+
+function downloadQRCodePng() {
+  if (!currentQRDataUrl) {
+    showToast('Kod QR belum sedia untuk dimuat turun', 'error');
+    return;
+  }
+
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  const img = new Image();
+
+  img.onload = () => {
+    canvas.width = 400;
+    canvas.height = 480;
+
+    // Background
+    ctx.fillStyle = '#0f131d';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Header badge
+    ctx.fillStyle = '#ffb95f';
+    ctx.font = 'bold 15px Plus Jakarta Sans, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('PERDASAMA KEBANGSAAN', 200, 38);
+
+    ctx.fillStyle = '#9ca3af';
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillText('Dewan Usahawan Melayu Malaysia', 200, 56);
+
+    // White card background for QR
+    ctx.fillStyle = '#ffffff';
+    ctx.roundRect ? ctx.roundRect(40, 75, 320, 320, 16) : ctx.fillRect(40, 75, 320, 320);
+    ctx.fill();
+
+    // Draw QR image
+    ctx.drawImage(img, 55, 90, 290, 290);
+
+    // Member Info footer
+    ctx.fillStyle = '#dfe2f1';
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillText("Dato' Dr. Megat Azlan bin Megat Tariq", 200, 425);
+
+    ctx.fillStyle = '#4edea3';
+    ctx.font = 'bold 12px monospace';
+    ctx.fillText('#PDS-MY-2025-0849 • PLATINUM KORPORAT', 200, 448);
+
+    // Trigger download
+    const link = document.createElement('a');
+    link.download = 'PERDASAMA_QR_PDS-MY-2025-0849.png';
+    link.href = canvas.toDataURL('image/png');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    showToast('Gambar Kod QR PNG berjaya dimuat turun!');
+  };
+
+  img.src = currentQRDataUrl;
+}
+
+function shareViaWhatsApp() {
+  const text = encodeURIComponent(
+    `Salam, berikut adalah Kad Pengesahan Digital PERDASAMA rasmi bagi Dato' Dr. Megat Azlan bin Megat Tariq (#PDS-MY-2025-0849 - Platinum Korporat):\n${currentVerificationUrl}`
+  );
+  window.open(`https://wa.me/?text=${text}`, '_blank');
 }
 
 // Bottom Tab Navigation
@@ -180,7 +324,7 @@ function initShareActions() {
   const btnCopyLink = document.getElementById('btn-copy-card-link');
   if (btnCopyLink) {
     btnCopyLink.addEventListener('click', () => {
-      const url = window.location.href;
+      const url = currentVerificationUrl || window.location.href;
       navigator.clipboard?.writeText(url).then(() => {
         showToast('Pautan kad digital berjaya disalin!');
       }).catch(() => {
@@ -199,7 +343,7 @@ ORG:Apex BioVentures Group Sdn Bhd;PERDASAMA Kebangsaan
 TITLE:Pengasas & Pengarah Urusan
 TEL;TYPE=CELL,VOICE:+60128889922
 EMAIL:megat.azlan@apexbio.com.my
-URL:https://perdasama.org.my
+URL:${currentVerificationUrl || 'https://perdasama.org.my'}
 NOTE:Ahli Seumur Hidup PERDASAMA | Platinum Korporat #PDS-MY-2025-0849
 END:VCARD`;
 
